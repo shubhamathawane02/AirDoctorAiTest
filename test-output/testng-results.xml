@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-05-03T02:12:47 IST" name="Airdoctor Affiliate Tests" finished-at="2024-05-03T02:13:51 IST" duration-ms="63159">
+    <groups>
+    </groups>
+    <test started-at="2024-05-03T02:12:47 IST" name="Ad2500 Affiliate Test" finished-at="2024-05-03T02:13:51 IST" duration-ms="63159">
+      <class name="agi.qa.airdoctor.tests.Ad2500AffiliatePageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:agi.qa.airdoctor.tests.Ad2500AffiliatePageTest@d675f9f]" started-at="2024-05-03T02:12:47 IST" name="setup" finished-at="2024-05-03T02:12:55 IST" duration-ms="7597" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="AffiliateLinkTest(java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.Ad2500AffiliatePageTest@d675f9f]" started-at="2024-05-03T02:12:57 IST" name="AffiliateLinkTest" data-provider="getAffiliateLinkFromExcel" finished-at="2024-05-03T02:13:22 IST" duration-ms="25514" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://airdoctorpro.com/?c=bdanko]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AffiliateLinkTest -->
+        <test-method signature="AffiliateLinkTest(java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.Ad2500AffiliatePageTest@d675f9f]" started-at="2024-05-03T02:13:23 IST" name="AffiliateLinkTest" data-provider="getAffiliateLinkFromExcel" finished-at="2024-05-03T02:13:50 IST" duration-ms="26351" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://airdoctorpro.com/?c=magwszelaki]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AffiliateLinkTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:agi.qa.airdoctor.tests.Ad2500AffiliatePageTest@d675f9f]" started-at="2024-05-03T02:13:50 IST" name="tearDown" finished-at="2024-05-03T02:13:51 IST" duration-ms="368" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- agi.qa.airdoctor.tests.Ad2500AffiliatePageTest -->
+    </test> <!-- Ad2500 Affiliate Test -->
+  </suite> <!-- Airdoctor Affiliate Tests -->
+</testng-results>
