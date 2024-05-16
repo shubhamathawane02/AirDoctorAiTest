@@ -280,6 +280,7 @@ public class ElementUtil {
 		nullBlankCheck(value);
 		List<WebElement> optionsList = getDropDownOptionsList(locator);
 		for (WebElement e : optionsList) {
+			
 			String text = e.getText();
 			System.out.println(text);
 
@@ -390,6 +391,11 @@ public class ElementUtil {
 	public void doActionsClick(By locator) {
 		Actions act = new Actions(driver);
 		act.click(getElement(locator)).perform();
+	}
+	
+	public void scrollTiView(By locator) {
+		Actions act = new Actions(driver);
+		act.scrollToElement((getElement(locator))).perform();
 	}
 
 	public void doActionsSendKeys(By locator, String value) {

@@ -26,11 +26,4 @@ public class LoginPageTest extends BaseTest {
 		//Assert.assertEquals(loginPage.getLoginSuccessText(), AppConstants.LOGIN_SUCCESS_TEXT);
 	}
 	
-	@Test(priority = 4)
-	public void viewProductTest() throws InterruptedException {
-		pdpPage= loginPage.clickBuyNow();
-		Assert.assertEquals(pdpPage.getProductPageURL(), AppConstants.PRODUCT_PAGE_URL_FRACTION);
-	}
-
-
 }

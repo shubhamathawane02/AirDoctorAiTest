@@ -1,43 +1,1369 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="14" passed="14" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-03T04:31:26 IST" name="Airdoctor Affiliate Tests" finished-at="2024-05-03T04:32:43 IST" duration-ms="77225">
+  <suite started-at="2024-05-16T21:48:46 IST" name="AirDoctor Order Flow Suite" finished-at="2024-05-16T22:21:25 IST" duration-ms="1958849">
     <groups>
     </groups>
-    <test started-at="2024-05-03T04:31:26 IST" name="Ad2500 Affiliate Test" finished-at="2024-05-03T04:32:43 IST" duration-ms="77225">
-      <class name="agi.qa.airdoctor.tests.Ad2500AffiliatePageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:agi.qa.airdoctor.tests.Ad2500AffiliatePageTest@7a3b7122]" started-at="2024-05-03T04:31:26 IST" name="setup" finished-at="2024-05-03T04:31:43 IST" duration-ms="17673" status="PASS">
+    <test started-at="2024-05-16T21:48:46 IST" name="AirDoctor Order Flow Test chrome" finished-at="2024-05-16T22:21:25 IST" duration-ms="1958849">
+      <class name="agi.qa.airdoctor.tests.AirDoctorOrderFlowTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T21:48:46 IST" name="setup" finished-at="2024-05-16T21:48:55 IST" duration-ms="9472" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="AffiliateLinkTest(java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.Ad2500AffiliatePageTest@7a3b7122]" started-at="2024-05-03T04:31:44 IST" name="AffiliateLinkTest" data-provider="getAffiliateLinkFromExcel" finished-at="2024-05-03T04:32:16 IST" duration-ms="31230" status="PASS">
+        <test-method is-config="true" signature="affilatePageSetup()[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T21:48:55 IST" name="affilatePageSetup" finished-at="2024-05-16T21:48:55 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- affilatePageSetup -->
+        <test-method signature="placeOrder(org.testng.ITestContext, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T21:48:57 IST" name="placeOrder" data-provider="getDataFromExcel" finished-at="2024-05-16T21:51:07 IST" duration-ms="130068" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[https://airdoctorpro.com/?c=bdanko]]>
+                <![CDATA[org.testng.TestRunner@1d456ab9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[AirDoctor 3500]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[gasftesting2@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Mridul]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vashistha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[40 Bowery Beach Rd]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Cape Elizabeth]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Maine]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[04107]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[83455666377]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[$658.00]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[$59.90]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[$36.19]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[$754.09]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AffiliateLinkTest -->
-        <test-method signature="AffiliateLinkTest(java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.Ad2500AffiliatePageTest@7a3b7122]" started-at="2024-05-03T04:32:16 IST" name="AffiliateLinkTest" data-provider="getAffiliateLinkFromExcel" finished-at="2024-05-03T04:32:42 IST" duration-ms="25805" status="PASS">
+        </test-method> <!-- placeOrder -->
+        <test-method signature="placeOrder(org.testng.ITestContext, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T21:51:08 IST" name="placeOrder" data-provider="getDataFromExcel" finished-at="2024-05-16T21:53:34 IST" duration-ms="145950" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[https://airdoctorpro.com/?c=magwszelaki]]>
+                <![CDATA[org.testng.TestRunner@1d456ab9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[AirDoctor 3500 iot]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[gasftesting2@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Mridul]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vashistha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[3 Research Ct]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Rockville]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Maryland]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[20850]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[83455666377]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[$688.00]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[$59.90]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[$41.28]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[$789.18]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AffiliateLinkTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:agi.qa.airdoctor.tests.Ad2500AffiliatePageTest@7a3b7122]" started-at="2024-05-03T04:32:43 IST" name="tearDown" finished-at="2024-05-03T04:32:43 IST" duration-ms="247" status="PASS">
+        </test-method> <!-- placeOrder -->
+        <test-method signature="placeOrder(org.testng.ITestContext, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T21:53:35 IST" name="placeOrder" data-provider="getDataFromExcel" finished-at="2024-05-16T21:55:42 IST" duration-ms="126874" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d456ab9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[AirDoctor 3500]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[gasftesting2@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Mridul]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vashistha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[8787 Keystone Crossing]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Indianapolis]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Indiana]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[46240]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[83455666377]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[$329.00]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[$29.95]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[$25.13]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[$384.08]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder -->
+        <test-method signature="placeOrder(org.testng.ITestContext, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T21:55:42 IST" name="placeOrder" data-provider="getDataFromExcel" finished-at="2024-05-16T21:58:02 IST" duration-ms="140034" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d456ab9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[AirDoctor 3500 iot]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[gasftesting2@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Mridul]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vashistha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[125 N Madison St]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Iowa City]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Iowa]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[52245]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[83455666377]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[$344.00]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[$29.95]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[$20.64]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[$394.59]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder -->
+        <test-method signature="placeOrder(org.testng.ITestContext, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T21:58:03 IST" name="placeOrder" data-provider="getDataFromExcel" finished-at="2024-05-16T22:00:12 IST" duration-ms="128835" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d456ab9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Buy 2 AD3500]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[gasftesting2@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Mridul]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vashistha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[526 Pine St]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Glenwood Springs]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Colorado]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[81601]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[83455666377]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[$658.00]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[$39.90]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[$56.87]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[$754.77]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder -->
+        <test-method signature="placeOrder(org.testng.ITestContext, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T22:00:12 IST" name="placeOrder" data-provider="getDataFromExcel" finished-at="2024-05-16T22:02:40 IST" duration-ms="147986" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d456ab9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Buy 2 AD3500 iot]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[gasftesting2@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Mridul]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vashistha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[668 W 5th St]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Covington]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Kentucky]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[41011]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[83455666377]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[$688.00]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[$39.90]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[$43.67]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[$771.57]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder -->
+        <test-method signature="placeOrder(org.testng.ITestContext, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T22:02:41 IST" name="placeOrder" data-provider="getDataFromExcel" finished-at="2024-05-16T22:04:46 IST" duration-ms="125445" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d456ab9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Buy AD3500 And AD5500]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[gasftesting2@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Mridul]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vashistha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[102 Lake St]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Shreveport]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Louisiana]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[71101]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[83455666377]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[$879.00]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[$39.90]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[$79.55]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[$998.45]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder -->
+        <test-method signature="placeOrder(org.testng.ITestContext, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T22:04:47 IST" name="placeOrder" data-provider="getDataFromExcel" finished-at="2024-05-16T22:07:14 IST" duration-ms="147125" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d456ab9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Buy AD3500 And AD5500 iot]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[gasftesting2@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Mridul]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vashistha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[14724 Ventura Blvd.]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Suite 200]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Sherman Oaks]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[California]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[91403]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[83455666377]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[$909.00]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[$39.90]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[$86.35]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[$1,035.25]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder -->
+        <test-method signature="placeOrder(org.testng.ITestContext, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T22:07:15 IST" name="placeOrder" data-provider="getDataFromExcel" finished-at="2024-05-16T22:09:21 IST" duration-ms="126373" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d456ab9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Buy AD3500 And AD2000]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[gasftesting2@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Mridul]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vashistha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[950 Old Grants Mill Rd]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Birmingham]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Alabama]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[35210]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[83455666377]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[$578.00]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[$39.90]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[$23.12]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[$641.02]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder -->
+        <test-method signature="placeOrder(org.testng.ITestContext, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T22:09:22 IST" name="placeOrder" data-provider="getDataFromExcel" finished-at="2024-05-16T22:11:43 IST" duration-ms="141718" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d456ab9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Buy AD3500 And AD2000 iot]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[gasftesting2@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Mridul]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vashistha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[167 S Franklin St]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Juneau]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Alaska]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[99801]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[83455666377]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[$608.00]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[$149.90]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[$37.90]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[$795.80]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder -->
+        <test-method signature="placeOrder(org.testng.ITestContext, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T22:11:44 IST" name="placeOrder" data-provider="getDataFromExcel" finished-at="2024-05-16T22:14:20 IST" duration-ms="155875" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d456ab9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[AD5500]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[gasftesting2@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Mridul]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vashistha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[8000 South Arizona Grand E]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Phoenix]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Arizona]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[85044]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[83455666377]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[$699.00]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[$29.95]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[$55.22]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[$784.17]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder -->
+        <test-method signature="placeOrder(org.testng.ITestContext, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T22:14:20 IST" name="placeOrder" data-provider="getDataFromExcel" finished-at="2024-05-16T22:16:47 IST" duration-ms="146317" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d456ab9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[AD5500 iot]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[gasftesting2@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Mridul]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vashistha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[8000 South Arizona Grand E]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Phoenix]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Arizona]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[85044]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[83455666377]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[$714.00]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[$29.95]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[$56.40]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[$800.35]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder -->
+        <test-method signature="placeOrder(org.testng.ITestContext, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T22:16:47 IST" name="placeOrder" data-provider="getDataFromExcel" finished-at="2024-05-16T22:18:59 IST" duration-ms="131177" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d456ab9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[AD2000]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[gasftesting2@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Mridul]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vashistha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[668 W 5th St]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Covington]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Kentucky]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[41011]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[83455666377]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[$279.00]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[$19.95]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[$17.94]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[$316.89]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder -->
+        <test-method signature="placeOrder(org.testng.ITestContext, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T22:18:59 IST" name="placeOrder" data-provider="getDataFromExcel" finished-at="2024-05-16T22:21:24 IST" duration-ms="144535" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1d456ab9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[AD2000 iot]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[gasftesting2@gmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Mridul]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vashistha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[102 Lake St]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Shreveport]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Louisiana]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[71101]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[83455666377]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[$294.00]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[$19.95]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[$26.60]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[$340.55]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@650c405c]" started-at="2024-05-16T22:21:24 IST" name="tearDown" finished-at="2024-05-16T22:21:25 IST" duration-ms="391" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- agi.qa.airdoctor.tests.Ad2500AffiliatePageTest -->
-    </test> <!-- Ad2500 Affiliate Test -->
-  </suite> <!-- Airdoctor Affiliate Tests -->
+      </class> <!-- agi.qa.airdoctor.tests.AirDoctorOrderFlowTest -->
+    </test> <!-- AirDoctor Order Flow Test chrome -->
+  </suite> <!-- AirDoctor Order Flow Suite -->
 </testng-results>

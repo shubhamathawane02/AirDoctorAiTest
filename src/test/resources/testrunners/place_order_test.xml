@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Rotorzer Order Flow Suite" verbose="3"
+<suite name="AirDoctor Order Flow Suite" verbose="3"
 	thread-count="1" parallel="tests">
 
 <listeners>
 	
 		<listener
-			class-name="agi.qa.rotorazer.listeners.ExtentReportListener" />
+			class-name="agi.qa.airdoctor.listeners.ExtentReportListener" />
 
+<listener
+			class-name="agi.qa.airdoctor.listeners.TestAllureListener" />
 	</listeners>
 
 	
-	<test name="Product Dispaly Page chrome">
-		<parameter name="browser" value="firefox" />
+	<test name="AirDoctor Order Flow Test chrome">
+		<parameter name="browser" value="chrome" />
 
 		<classes>
-			<class name="agi.qa.rotorazer.tests.ProductDispalyPageTest" />
+			<class name="agi.qa.airdoctor.tests.AirDoctorOrderFlowTest" />
 		</classes>
 	</test>
 

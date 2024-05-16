@@ -64,7 +64,7 @@ public class ExcelUtil {
 
 	}
 	
-	public static void setdata(String sheetName, String subtotal,String shipping,String tax,String total,int count) throws IOException, InvalidFormatException {
+	public static void setdata(String sheetName, String subtotal,String shipping,String tax,String total,String orderId,int count) throws IOException, InvalidFormatException {
    
 
 		FileInputStream ip = new FileInputStream(TEST_DATA_SHEET_PATH);
@@ -73,6 +73,7 @@ public class ExcelUtil {
 		
         //creating a Sheet object
 		sheet = book.getSheet(sheetName);
+		System.out.println("=========================================================================");
         
         //get all rows in the sheet
         //int rowCount=sheet.getLastRowNum()-sheet.getFirstRowNum();
@@ -84,26 +85,34 @@ public class ExcelUtil {
          cell.setCellValue(subtotal);
          System.out.println("Subtotal on row "+ (count+1) +" and Coloum "+(sheet.getRow(count+1).getLastCellNum())+" is "+subtotal);
          
-         cell = sheet.getRow(count+1).createCell(sheet.getRow(count+1).getLastCellNum()+1);
-         System.out.println("Row Number "+(count+1)+" Coloum Number "+((sheet.getRow(count+1).getLastCellNum())+1));
+         System.out.println("=========================================================================");
+         cell = sheet.getRow(count+1).createCell(sheet.getRow(count+1).getLastCellNum());
+         System.out.println("Row Number "+(count+1)+" Coloum Number "+(sheet.getRow(count+1).getLastCellNum()));
          cell.setCellValue(shipping);
-         System.out.println("Shipping on row"+(count+1)+" and Coloum Number "+((sheet.getRow(count+1).getLastCellNum())+1)+" is "+shipping);
-
+         System.out.println("Shipping on row "+(count+1)+" and Coloum Number "+(sheet.getRow(count+1).getLastCellNum())+" is "+shipping);
+         System.out.println("=========================================================================");
          
-         cell = sheet.getRow(count+1).createCell(sheet.getRow(count+1).getLastCellNum()+2);
-         System.out.println("Row Number "+(count+1)+" Coloum Number "+((sheet.getRow(count+1).getLastCellNum())+2));
+         cell = sheet.getRow(count+1).createCell(sheet.getRow(count+1).getLastCellNum());
+         System.out.println("Row Number "+(count+1)+" Coloum Number "+(sheet.getRow(count+1).getLastCellNum()));
          cell.setCellValue(tax);
-         System.out.println("Tax on row "+(count+1)+" and Coloum Number "+((sheet.getRow(count+1).getLastCellNum())+2)+" is "+tax);
-
+         System.out.println("Tax on row "+(count+1)+" and Coloum Number "+(sheet.getRow(count+1).getLastCellNum())+" is "+tax);
+         System.out.println("=========================================================================");
          
-         cell = sheet.getRow(count+1).createCell(sheet.getRow(0).getLastCellNum()+3);
-         System.out.println("Row Number"+(count+1)+" Coloum Number "+((sheet.getRow(count+1).getLastCellNum())+3));
+         cell = sheet.getRow(count+1).createCell(sheet.getRow(count+1).getLastCellNum());
+         System.out.println("Row Number"+(count+1)+" Coloum Number "+(sheet.getRow(count+1).getLastCellNum()));
          cell.setCellValue(total);
-         System.out.println(" Total on row "+(count+1)+" and Coloum Number "+((sheet.getRow(count+10).getLastCellNum())+3)+" is "+total);
- 
-        FileOutputStream outputStream = new FileOutputStream(TEST_DATA_SHEET_PATH);
-        book.write(outputStream);
+         System.out.println(" Total on row "+(count+1)+" and Coloum Number "+(sheet.getRow(count+1).getLastCellNum())+" is "+total);
+         System.out.println("=========================================================================");
+         
+         cell = sheet.getRow(count+1).createCell(sheet.getRow(count+1).getLastCellNum());
+         System.out.println("Row Number"+(count+1)+" Coloum Number "+(sheet.getRow(count+1).getLastCellNum()));
+         cell.setCellValue(orderId);
+         System.out.println(" Order Id On Row "+(count+1)+" and Coloum Number "+(sheet.getRow(count+1).getLastCellNum())+" is "+orderId);
+         System.out.println("=========================================================================");
         
+         FileOutputStream outputStream = new FileOutputStream(TEST_DATA_SHEET_PATH);
+         book.write(outputStream);
+         System.out.println("=========================================================================");
        
 
 }

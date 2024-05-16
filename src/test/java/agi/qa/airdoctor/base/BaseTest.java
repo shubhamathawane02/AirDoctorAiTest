@@ -14,7 +14,6 @@ import agi.qa.airdoctor.constants.AppConstants;
 import agi.qa.airdoctor.factory.DriverFactory;
 import agi.qa.airdoctor.pages.Ad2500AffiliatePage;
 import agi.qa.airdoctor.pages.LoginPage;
-import agi.qa.airdoctor.pages.ProductDisplayPage;
 import agi.qa.airdoctor.utils.ExcelUtil;
 
 
@@ -27,7 +26,6 @@ public class BaseTest {
 	DriverFactory df;
 	
 	protected LoginPage loginPage;
-	protected ProductDisplayPage pdpPage;
 	protected Ad2500AffiliatePage affiliatePage;
 	protected SoftAssert softAssert;
 	
@@ -44,19 +42,14 @@ public class BaseTest {
 	 * new SoftAssert(); }
 	 */
 	
-	@DataProvider
-	public Object[][] getAffiliateLinkFromExcel() {
-		return ExcelUtil.getTestData(AppConstants.AFFILIATE_LINK);
-	}
-	
 	@BeforeTest
 	public void setup() {
 		df = new DriverFactory();
 		prop = df.initProp();
 		driver = df.initDriver(prop);
-		//loginPage = new LoginPage(driver);
-		affiliatePage = new Ad2500AffiliatePage(driver);
-		softAssert = new SoftAssert();
+		loginPage = new LoginPage(driver);
+		//affiliatePage = new Ad2500AffiliatePage(driver);
+		//softAssert = new SoftAssert();
 	}
 	
 	
