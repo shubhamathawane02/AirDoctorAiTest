@@ -30,29 +30,30 @@ public class AirDoctorOrderFlowTest extends BaseTest {
 	
 	
 	  @DataProvider public Object[][] getDataFromExcel() { 
-	   return ExcelUtil.getTestData(AppConstants.PRODUCT_SHEET_NAME); 
+	   return ExcelUtil.getTestData(AppConstants.MEMORIAL_SHEET_NAME); 
 	   }
 	 
 	
 	  @Test(dataProvider = "getDataFromExcel") 
-	  public void placeOrder(ITestContext testContext,String ModelName,String ProductQuantity, String email, 
+	  public void placeOrder(ITestContext testContext,String ModelName,String ProductQuantity,String ModeltwoName,String ProducttwoQuantity, String email, 
 	  String firstname, String lastname, String addone, String addtwo, String cty ,String state,String zipcode,
 	  String phonenumber, String upsellOne,String upsellQuantity, String subtotal, String flatrate, String tax, 
 	  String finaltotal) throws InterruptedException, Exception
 	  {
 	try {
-	  affiliatePage = loginPage.doLogin(prop.getProperty("username"),prop.getProperty("password"));
-	  affiliatePage.clearCart();
-	  affiliatePage = loginPage.clickShopNow();
+	  memorialPage = loginPage.doLogin(prop.getProperty("username"),prop.getProperty("password"));
+	  memorialPage.clearCart();
+	  memorialPage = loginPage.clickShopNow();
 	  softAssert = new SoftAssert();
-	  int currenttest= affiliatePage.testMe(testContext);
+	  int currenttest= memorialPage.testMe(testContext);
 	  Thread.sleep(3000);
-	  affiliatePage.selectModel(ModelName, ProductQuantity); 
+	  System.out.println(ModelName);
+	  memorialPage.selectModel(ModelName, ProductQuantity,ModeltwoName,ProducttwoQuantity); 
 	  Thread.sleep(5000);
-	  affiliatePage.checkout(email,firstname, lastname, addone, addtwo, cty, state,zipcode,phonenumber); 
+	  memorialPage.checkout(email,firstname, lastname, addone, addtwo, cty, state,zipcode,phonenumber); 
 	  Thread.sleep(15000);
-	  affiliatePage.getThankYoPageURL();
-	  Map<String, String>  productActDetailsMap = affiliatePage.getorderdetails();
+	  memorialPage.getThankYoPageURL();
+	  Map<String, String>  productActDetailsMap = memorialPage.getorderdetails();
 	  softAssert.assertEquals(productActDetailsMap.get("subtotal"), subtotal);
 	  System.out.println("=============================================================");
 	  System.out.println("Expected Subtotal: "+subtotal+"|| Actual Subtotal: "+productActDetailsMap.get("subtotal"));
@@ -63,7 +64,7 @@ public class AirDoctorOrderFlowTest extends BaseTest {
 	  softAssert.assertEquals(productActDetailsMap.get("total"), finaltotal);
 	  System.out.println("Expected total: "+finaltotal+" || Actual total: "+productActDetailsMap.get("total"));
 	  System.out.println("=============================================================");
-	  affiliatePage.writeexcel(productActDetailsMap.get("subtotal"),productActDetailsMap.get("Shipping"),productActDetailsMap.get("tax"),productActDetailsMap.get("total"),productActDetailsMap.get("OrderID"),currenttest); 
+	  memorialPage.writeexcel(productActDetailsMap.get("subtotal"),productActDetailsMap.get("Shipping"),productActDetailsMap.get("tax"),productActDetailsMap.get("total"),productActDetailsMap.get("OrderID"),currenttest); 
 	  softAssert.assertAll();
 	}
 	finally {

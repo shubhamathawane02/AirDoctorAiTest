@@ -20,7 +20,7 @@ import agi.qa.airdoctor.utils.ExcelUtil;
 import agi.qa.airdoctor.utils.JavaScriptUtil;
 import agi.qa.airdoctor.utils.TimeUtil;
 
-public class Ad2500AffiliatePage {
+public class AirDoctorMemorialDayPage {
 
 	// Page class/Page Library/Page Object
 	private WebDriver driver;
@@ -42,11 +42,11 @@ public class Ad2500AffiliatePage {
 			"//*[@id='nu-custom-heading-title' and contains(text(), 'Buy AirDoctor 3500')]/following-sibling::div[@class='main-price-wrapper aff-promotion-price']//p[@class='earth_day_price']/span[@class='orange-price-txt']/span[@class='woocommerce-Price-amount amount']/bdi");
 	private By ad3500addToCart = By.xpath("//a[@id='iot_productaddtocart_135514']");
 
-	// Buy 2 AD3500 locators
-	private By buy2AD3500increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_286676']//input[@value='+']");
+	// Buy AirDoctor 3500 And A One Year Filter Combo Pack!
+	private By buy2AD3500increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_286932']//input[@value='+']");
 	private By buy2Ad3500UpgradeToIotCheckbox = By.xpath(
-			"//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='286678']");
-	private By buy2ad3500addToCart = By.xpath("//a[@id='iot_productaddtocart_286676']");
+			"//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='286934']");
+	private By buy2ad3500addToCart = By.xpath("//a[@id='iot_productaddtocart_286932']");
 	private By buy2AD3500regularPrice = By.xpath(
 			"//*[@id='nu-custom-heading-title' and contains(text(), 'Buy 2 AD3500')]/following-sibling::div[contains(@class, 'main-price-wrapper')]/p[@class='earth_day_price']/span[contains(text(), 'Regular Price:')]/del/span/bdi");
 	private By buy2AD3500salePrice = By.xpath(
@@ -54,25 +54,31 @@ public class Ad2500AffiliatePage {
 	private By buy2AD3500emailonlyPrice = By.xpath(
 			"//*[@id='nu-custom-heading-title' and contains(text(), 'Buy 2 AD3500')]/following-sibling::div[@class='main-price-wrapper aff-promotion-price']//p[@class='earth_day_price']/span[@class='orange-price-txt']/span[@class='woocommerce-Price-amount amount']/bdi");
 
-	// Buy AD3500 And Get An AD5500 For Only $250!
-	// *[@id='nu-custom-heading-title' and contains(text(), 'Buy AD3500') and
-	// contains(span, 'Get an AD5500 for only
-	// $250!')]/following-sibling::div[@class='main-price-wrapper
-	// aff-promotion-price']/p[@class='earth_day_price']/span[contains(@class,
-	// 'orange-price-txt')]/span[@class='woocommerce-Price-amount amount']/bdi
+	// Buy AirDoctor 5500 And A One Year Filter Combo Pack!
 	private By buyAD3500withAD5500increasequantitybtn = By
-			.xpath("//div[@id='iotproduct_varinfo_286686']//input[@value='+']");
+			.xpath("//div[@id='iotproduct_varinfo_286997']//input[@value='+']");
 	private By buyAD3500withAD5500UpgradeToIotCheckbox = By.xpath(
-			"//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='286688']");
-	private By buyAD3500withAD5500addToCart = By.xpath("//a[@id='iot_productaddtocart_286686']");
+			"//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='286999']");
+	private By buyAD3500withAD5500addToCart = By.xpath("//a[@id='iot_productaddtocart_286997']");
 
-	// Buy AD3500 And Get An AD2000 For Only $249!
+	// Buy AirDoctor 2000 And A One Year Filter Combo Pack!
 	private By buyAD3500withAD2000increasequantitybtn = By
-			.xpath("//div[@id='iotproduct_varinfo_286690']//input[@value='+']");
+			.xpath("//div[@id='iotproduct_varinfo_287020']//input[@value='+']");
 	private By buyAD3500withAD2000UpgradeToIotCheckbox = By.xpath(
-			"//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='286692']");
-	private By buyAD3500withAD2000addToCart = By.xpath("//a[@id='iot_productaddtocart_286690']");
+			"//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='287022']");
+	private By buyAD3500withAD2000addToCart = By.xpath("//a[@id='iot_productaddtocart_287020']");
 
+	// Buy AirDoctor 1000 And A One Year Filter Combo Pack!
+	private By buyAD1000withFilterincreasequantitybtn = By
+			.xpath("//div[@class='quantity buttons_added']/input[@id='p_quantity287023']/following-sibling::input[@value='+']");
+	private By buyAD1000withFilteraddToCart = By.xpath("//section[contains(@class,'product_section_287023')]//a[contains(@class,'button secondary btn-pri single_add_to_cart_button_sales')]");
+	
+	
+	// Buy AirDoctor 1000!
+	private By buyAD1000increasequantitybtn = By
+				.xpath("//div[@class='quantity buttons_added']/input[@id='p_quantity451']/following-sibling::input[@value='+']");
+	private By buyAD1000addToCart = By.xpath("//section[contains(@class,'product_section_451')]//a[contains(@class,'button secondary btn-pri single_add_to_cart_button_sales')]");
+	
 	// Buy AirDoctor 5500 And Receive $300 Off
 	private By buyAD5500increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_135600']//input[@value='+']");
 	private By buyAD5500UpgradeToIotCheckbox = By.xpath(
@@ -178,7 +184,7 @@ public class Ad2500AffiliatePage {
 	private By deletebtn = By.xpath("//*[@id=\"main\"]/div[2]/div/div/div[2]/div/div/table/tbody/tr/td[6]/a[3]");
 
 	// 2. Public Page Class Const...
-	public Ad2500AffiliatePage(WebDriver driver) {
+	public AirDoctorMemorialDayPage(WebDriver driver) {
 		this.driver = driver;
 		eleUtil = new ElementUtil(driver);
 		JsUtil = new JavaScriptUtil(driver);
@@ -202,9 +208,9 @@ public class Ad2500AffiliatePage {
 		return url;
 	}
 
-	public Ad2500AffiliatePage getaffiliateURL(String url) {
+	public AirDoctorMemorialDayPage getaffiliateURL(String url) {
 		driver.get(url);
-		return new Ad2500AffiliatePage(driver);
+		return new AirDoctorMemorialDayPage(driver);
 	}
 
 	public String getBannerText() {
@@ -379,17 +385,19 @@ public class Ad2500AffiliatePage {
 		eleUtil.clickWhenReady(popupdonebtn, TimeUtil.DEFAULT_MEDIUM_TIME);
 	}
 
-	public void selectModel(String ModelName, String ProductQuantity) throws InterruptedException, Exception {
+	public void selectModel(String ModelName, String ProductQuantity,String ModeltwoName, String ProducttwoQuantity) throws InterruptedException, Exception {
 		try {
-			if (ModelName.equalsIgnoreCase("AirDoctor 3500")||ModelName.equalsIgnoreCase("AirDoctor 3500") && ProductQuantity.equals("1")) {
+			
+			if (ModelName.equalsIgnoreCase("AD3500")||ModelName.equalsIgnoreCase("AirDoctor 3500") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(ad3500addToCart);
 				Thread.sleep(3000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 			}
-			if (ModelName.equalsIgnoreCase("AirDoctor 3500") && ProductQuantity.equals("2")) {
+			else if (ModelName.equalsIgnoreCase("AD3500") && ProductQuantity.equals("2")) {
 
 				System.out.println(ModelName + " with quantity " + ProductQuantity);;
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
@@ -398,10 +406,11 @@ public class Ad2500AffiliatePage {
 				Thread.sleep(3000);
 				eleUtil.doActionsClick(ad3500addToCart);
 				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("AirDoctor 3500") && ProductQuantity.equals("3")) {
+			else if (ModelName.equalsIgnoreCase("AD3500") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
@@ -413,11 +422,12 @@ public class Ad2500AffiliatePage {
 				System.out.println("Clicked on Add to Cart");
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("AirDoctor 3500 iot") && ProductQuantity.equals("1")) {
+			else if (ModelName.equalsIgnoreCase("AD3500i") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
@@ -426,10 +436,11 @@ public class Ad2500AffiliatePage {
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(ad3500addToCart);
 				Thread.sleep(3000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 			}
 
-			if (ModelName.equalsIgnoreCase("AirDoctor 3500 iot") && ProductQuantity.equals("2")) {
+			else if (ModelName.equalsIgnoreCase("AD3500i") && ProductQuantity.equals("2")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
@@ -439,10 +450,11 @@ public class Ad2500AffiliatePage {
 				Thread.sleep(3000);
 				eleUtil.doActionsClick(ad3500addToCart);
 				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("AirDoctor 3500 iot") && ProductQuantity.equals("3")) {
+			else if (ModelName.equalsIgnoreCase("AD3500i") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
@@ -456,19 +468,21 @@ public class Ad2500AffiliatePage {
 				System.out.println("Clicked on Add to Cart");
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("Buy 2 AD3500") && ProductQuantity.equals("1")) {
+			else if (ModelName.equalsIgnoreCase("AD3500 with Filter") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(buy2ad3500addToCart);
 				Thread.sleep(3000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 			}
-			if (ModelName.equalsIgnoreCase("Buy 2 AD3500") && ProductQuantity.equals("2")) {
+			else if (ModelName.equalsIgnoreCase("AD3500 with Filter") && ProductQuantity.equals("2")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
 				// JsUtil.scrollIntoView(eleUtil.getElement(buy2ad3500addToCart));
@@ -477,10 +491,11 @@ public class Ad2500AffiliatePage {
 				Thread.sleep(3000);
 				eleUtil.doActionsClick(buy2ad3500addToCart);
 				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("Buy 2 AD3500") && ProductQuantity.equals("3")) {
+			else if (ModelName.equalsIgnoreCase("AD3500 with Filter") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
 				Thread.sleep(3000);
@@ -492,11 +507,12 @@ public class Ad2500AffiliatePage {
 				System.out.println("Clicked on Add to Cart");
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("Buy 2 AD3500 iot") && ProductQuantity.equals("1")) {
+			else if (ModelName.equalsIgnoreCase("AD3500i with Filter") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
 				Thread.sleep(10000);
@@ -509,10 +525,11 @@ public class Ad2500AffiliatePage {
 				eleUtil.doActionsClick(buy2ad3500addToCart);
 				eleUtil.doActionsClick(buy2ad3500addToCart);
 				Thread.sleep(6000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 			}
 
-			if (ModelName.equalsIgnoreCase("Buy 2 AD3500 iot") && ProductQuantity.equals("2")) {
+			else if (ModelName.equalsIgnoreCase("AD3500i with Filter") && ProductQuantity.equals("2")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
 				Thread.sleep(5000);
@@ -524,10 +541,11 @@ public class Ad2500AffiliatePage {
 				eleUtil.doActionsClick(buy2ad3500addToCart);
 				eleUtil.doActionsClick(buy2ad3500addToCart);
 				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("Buy 2 AD3500 iot") && ProductQuantity.equals("3")) {
+			else if (ModelName.equalsIgnoreCase("AD3500i with Filter") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
@@ -542,20 +560,22 @@ public class Ad2500AffiliatePage {
 				System.out.println("Clicked on Add to Cart");
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("Buy AD3500 And AD5500") && ProductQuantity.equals("1")) {
+			else if (ModelName.equalsIgnoreCase("AD5500 with Filter") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				Thread.sleep(3000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 			}
-			if (ModelName.equalsIgnoreCase("Buy AD3500 And AD5500") && ProductQuantity.equals("2")) {
+			else if (ModelName.equalsIgnoreCase("AD5500 with Filter") && ProductQuantity.equals("2")) {
 
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
@@ -565,10 +585,11 @@ public class Ad2500AffiliatePage {
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("Buy AD3500 And AD5500") && ProductQuantity.equals("3")) {
+			else if (ModelName.equalsIgnoreCase("AD5500 with Filter") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
 				Thread.sleep(3000);
@@ -582,10 +603,11 @@ public class Ad2500AffiliatePage {
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				eleUtil.doActionsClick(checkoutBtn);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("Buy AD3500 And AD5500 iot") && ProductQuantity.equals("1")) {
+			else if (ModelName.equalsIgnoreCase("AD5500i with Filter") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
 				Thread.sleep(10000);
@@ -596,10 +618,11 @@ public class Ad2500AffiliatePage {
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				Thread.sleep(6000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 			}
 
-			if (ModelName.equalsIgnoreCase("Buy AD3500 And AD5500 iot") && ProductQuantity.equals("2")) {
+			else if (ModelName.equalsIgnoreCase("AD5500i with Filter") && ProductQuantity.equals("2")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
 				Thread.sleep(5000);
@@ -611,10 +634,11 @@ public class Ad2500AffiliatePage {
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("Buy AD3500 And AD5500 iot") && ProductQuantity.equals("3")) {
+			else if (ModelName.equalsIgnoreCase("AD5500i with Filter") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
@@ -629,20 +653,22 @@ public class Ad2500AffiliatePage {
 				System.out.println("Clicked on Add to Cart");
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("Buy AD3500 And AD2000") && ProductQuantity.equals("1")) {
+			else if (ModelName.equalsIgnoreCase("AD2000 with Filter") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				Thread.sleep(3000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 			}
-			if (ModelName.equalsIgnoreCase("Buy AD3500 And AD2000") && ProductQuantity.equals("2")) {
+			else if (ModelName.equalsIgnoreCase("AD2000 with Filter") && ProductQuantity.equals("2")) {
 
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
@@ -652,10 +678,11 @@ public class Ad2500AffiliatePage {
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("Buy AD3500 And AD2000") && ProductQuantity.equals("3")) {
+			else if (ModelName.equalsIgnoreCase("AD2000 with Filter") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
 				Thread.sleep(3000);
@@ -668,11 +695,12 @@ public class Ad2500AffiliatePage {
 				System.out.println("Clicked on Add to Cart");
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("Buy AD3500 And AD2000 iot") && ProductQuantity.equals("1")) {
+			else if (ModelName.equalsIgnoreCase("AD2000i with Filter") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
 				Thread.sleep(10000);
@@ -683,10 +711,11 @@ public class Ad2500AffiliatePage {
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				Thread.sleep(6000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 			}
 
-			if (ModelName.equalsIgnoreCase("Buy AD3500 And AD2000 iot") && ProductQuantity.equals("2")) {
+			else if (ModelName.equalsIgnoreCase("AD2000i with Filter") && ProductQuantity.equals("2")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
 				Thread.sleep(5000);
@@ -698,10 +727,11 @@ public class Ad2500AffiliatePage {
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("Buy AD3500 And AD2000 iot") && ProductQuantity.equals("3")) {
+			else if (ModelName.equalsIgnoreCase("AD2000i with Filter") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
@@ -717,11 +747,12 @@ public class Ad2500AffiliatePage {
 				System.out.println("Clicked on Add to Cart");
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("AD5500") && ProductQuantity.equals("1")) {
+			else if (ModelName.equalsIgnoreCase("AD5500") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
 				Thread.sleep(5000);
@@ -730,7 +761,7 @@ public class Ad2500AffiliatePage {
 				Thread.sleep(3000);
 				eleUtil.doActionsClick(checkoutBtn);
 			}
-			if (ModelName.equalsIgnoreCase("AD5500") && ProductQuantity.equals("2")) {
+			else if (ModelName.equalsIgnoreCase("AD5500") && ProductQuantity.equals("2")) {
 
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
@@ -740,10 +771,11 @@ public class Ad2500AffiliatePage {
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("AD5500") && ProductQuantity.equals("3")) {
+			else if (ModelName.equalsIgnoreCase("AD5500") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
 				Thread.sleep(3000);
@@ -756,11 +788,12 @@ public class Ad2500AffiliatePage {
 				System.out.println("Clicked on Add to Cart");
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("AD5500 iot") && ProductQuantity.equals("1")) {
+			else if (ModelName.equalsIgnoreCase("AD5500i") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
 				Thread.sleep(10000);
@@ -769,10 +802,11 @@ public class Ad2500AffiliatePage {
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				Thread.sleep(6000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 			}
 
-			if (ModelName.equalsIgnoreCase("AD5500 iot") && ProductQuantity.equals("2")) {
+			else if (ModelName.equalsIgnoreCase("AD5500i") && ProductQuantity.equals("2")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
 				Thread.sleep(5000);
@@ -784,10 +818,11 @@ public class Ad2500AffiliatePage {
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("AD5500 iot") && ProductQuantity.equals("3")) {
+			else if (ModelName.equalsIgnoreCase("AD5500i") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
@@ -803,20 +838,22 @@ public class Ad2500AffiliatePage {
 				System.out.println("Clicked on Add to Cart");
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("AD2000") && ProductQuantity.equals("1")) {
+			else if (ModelName.equalsIgnoreCase("AD2000") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				Thread.sleep(3000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 			}
-			if (ModelName.equalsIgnoreCase("AD2000") && ProductQuantity.equals("2")) {
+			else if (ModelName.equalsIgnoreCase("AD2000") && ProductQuantity.equals("2")) {
 
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
@@ -826,10 +863,11 @@ public class Ad2500AffiliatePage {
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("AD2000") && ProductQuantity.equals("3")) {
+			else if (ModelName.equalsIgnoreCase("AD2000") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
 				Thread.sleep(3000);
@@ -842,11 +880,12 @@ public class Ad2500AffiliatePage {
 				System.out.println("Clicked on Add to Cart");
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("AD2000 iot") && ProductQuantity.equals("1")) {
+			else if (ModelName.equalsIgnoreCase("AD2000i") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
 				Thread.sleep(10000);
@@ -855,10 +894,11 @@ public class Ad2500AffiliatePage {
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				Thread.sleep(6000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 			}
 
-			if (ModelName.equalsIgnoreCase("AD2000 iot") && ProductQuantity.equals("2")) {
+			else if (ModelName.equalsIgnoreCase("AD2000i") && ProductQuantity.equals("2")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
 				Thread.sleep(5000);
@@ -870,10 +910,11 @@ public class Ad2500AffiliatePage {
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
 			}
-			if (ModelName.equalsIgnoreCase("AD2000 iot") && ProductQuantity.equals("3")) {
+			else if (ModelName.equalsIgnoreCase("AD2000i") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
@@ -889,6 +930,91 @@ public class Ad2500AffiliatePage {
 				System.out.println("Clicked on Add to Cart");
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+				System.out.println("Clicked on CheckOut");
+				Thread.sleep(4000);
+			}
+			else if (ModelName.equalsIgnoreCase("AD1000") && ProductQuantity.equals("1")) {
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(buyAD1000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD1000addToCart);
+				eleUtil.doActionsClick(buyAD1000addToCart);
+				Thread.sleep(3000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+			}
+			else if (ModelName.equalsIgnoreCase("AD1000") && ProductQuantity.equals("2")) {
+
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(buyAD1000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD1000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD1000addToCart);
+				eleUtil.doActionsClick(buyAD1000addToCart);
+				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+				Thread.sleep(4000);
+			}
+			else if (ModelName.equalsIgnoreCase("AD1000") && ProductQuantity.equals("3")) {
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(buyAD1000increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD1000increasequantitybtn);
+				eleUtil.doActionsClick(buyAD1000increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buyAD1000addToCart);
+				eleUtil.doActionsClick(buyAD1000addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+				System.out.println("Clicked on CheckOut");
+				Thread.sleep(4000);
+			}
+			else if (ModelName.equalsIgnoreCase("AD1000 with Filter") && ProductQuantity.equals("1")) {
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(buyAD1000withFilterincreasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
+				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
+				Thread.sleep(3000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+			}
+			else if (ModelName.equalsIgnoreCase("AD1000 with Filter") && ProductQuantity.equals("2")) {
+
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(buyAD1000withFilterincreasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD1000withFilterincreasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
+				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
+				Thread.sleep(4000);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
+				eleUtil.doActionsClick(checkoutBtn);
+				Thread.sleep(4000);
+			}
+			else if (ModelName.equalsIgnoreCase("AD1000 with Filter") && ProductQuantity.equals("3")) {
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				eleUtil.scrollTiView(buyAD1000withFilterincreasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD1000withFilterincreasequantitybtn);
+				eleUtil.doActionsClick(buyAD1000withFilterincreasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
+				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
@@ -910,7 +1036,7 @@ public class Ad2500AffiliatePage {
 
 	public void writeexcel(String subtotal, String flatrate, String tax, String total,String orderId, int count)
 			throws InvalidFormatException, IOException {
-		ExcelUtil.setdata(AppConstants.PRODUCT_SHEET_NAME, subtotal, flatrate, tax, total,orderId, count);
+		ExcelUtil.setdata(AppConstants.MEMORIAL_SHEET_NAME, subtotal, flatrate, tax, total,orderId, count);
 	}
 
 	public int testMe(ITestContext testContext) {
@@ -928,4 +1054,565 @@ public class Ad2500AffiliatePage {
 		return new LoginPage(driver);
 	}
 
+	public void selectSecondModel(String ModeltwoName, String ProducttwoQuantity) throws InterruptedException, Exception {
+		try {
+			if (ModeltwoName.equalsIgnoreCase("AD3500")||ModeltwoName.equalsIgnoreCase("AirDoctor 3500") && ProducttwoQuantity.equals("1")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(AD3500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(ad3500addToCart);
+				Thread.sleep(3000);
+				
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD3500") && ProducttwoQuantity.equals("2")) {
+
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);;
+				eleUtil.scrollTiView(AD3500increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(AD3500increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(ad3500addToCart);
+				Thread.sleep(4000);
+				
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD3500") && ProducttwoQuantity.equals("3")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(AD3500increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(AD3500increasequantitybtn);
+				eleUtil.doActionsClick(AD3500increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(ad3500addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD3500i") && ProducttwoQuantity.equals("1")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(AD3500increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doClickcheckbox(ad3500UpgradeToIotCheckbox, TimeUtil.DEFAULT_LONG_TIME);
+				// eleUtil.doActionsClick(ad3500UpgradeToIotCheckbox);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(ad3500addToCart);
+				Thread.sleep(3000);
+				
+			}
+
+			if (ModeltwoName.equalsIgnoreCase("AD3500i") && ProducttwoQuantity.equals("2")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(AD3500increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doClickcheckbox(ad3500UpgradeToIotCheckbox, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(AD3500increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(ad3500addToCart);
+				Thread.sleep(4000);
+				
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD3500i") && ProducttwoQuantity.equals("3")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(AD3500increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doClickcheckbox(ad3500UpgradeToIotCheckbox, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(AD3500increasequantitybtn);
+				eleUtil.doActionsClick(AD3500increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(ad3500addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD3500 with Filter") && ProducttwoQuantity.equals("1")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buy2ad3500addToCart);
+				Thread.sleep(3000);
+			
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD3500 with Filter") && ProducttwoQuantity.equals("2")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
+				// JsUtil.scrollIntoView(eleUtil.getElement(buy2ad3500addToCart));
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buy2AD3500increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buy2ad3500addToCart);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD3500 with Filter") && ProducttwoQuantity.equals("3")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buy2AD3500increasequantitybtn);
+				eleUtil.doActionsClick(buy2AD3500increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buy2ad3500addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD3500i with Filter") && ProducttwoQuantity.equals("1")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
+				Thread.sleep(10000);
+				// eleUtil.doClickcheckbox(buy2Ad3500UpgradeToIotCheckbox,
+				// TimeUtil.DEFAULT_LONG_TIME);
+				eleUtil.doActionsClick(buy2Ad3500UpgradeToIotCheckbox);
+				Thread.sleep(5000);
+				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buy2ad3500addToCart);
+				eleUtil.doActionsClick(buy2ad3500addToCart);
+				Thread.sleep(6000);
+				
+			}
+
+			if (ModeltwoName.equalsIgnoreCase("AD3500i with Filter") && ProducttwoQuantity.equals("2")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buy2Ad3500UpgradeToIotCheckbox);
+				Thread.sleep(5000);
+				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
+				eleUtil.doActionsClick(buy2AD3500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buy2ad3500addToCart);
+				eleUtil.doActionsClick(buy2ad3500addToCart);
+				Thread.sleep(4000);
+				
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD3500i with Filter") && ProducttwoQuantity.equals("3")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				Thread.sleep(6000);
+				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
+				eleUtil.doActionsClick(buy2Ad3500UpgradeToIotCheckbox);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buy2AD3500increasequantitybtn);
+				eleUtil.doActionsClick(buy2AD3500increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buy2ad3500addToCart);
+				eleUtil.doActionsClick(buy2ad3500addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD5500 with Filter") && ProducttwoQuantity.equals("1")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
+				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
+				Thread.sleep(3000);
+			
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD5500 with Filter") && ProducttwoQuantity.equals("2")) {
+
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD3500withAD5500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
+				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD5500 with Filter") && ProducttwoQuantity.equals("3")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD3500withAD5500increasequantitybtn);
+				eleUtil.doActionsClick(buyAD3500withAD5500increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
+				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD5500i with Filter") && ProducttwoQuantity.equals("1")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
+				Thread.sleep(10000);
+				eleUtil.doActionsClick(buyAD3500withAD5500UpgradeToIotCheckbox);
+				Thread.sleep(5000);
+				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
+				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
+				Thread.sleep(6000);
+				
+			}
+
+			if (ModeltwoName.equalsIgnoreCase("AD5500i with Filter") && ProducttwoQuantity.equals("2")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD3500withAD5500UpgradeToIotCheckbox);
+				Thread.sleep(5000);
+				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
+				eleUtil.doActionsClick(buyAD3500withAD5500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
+				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
+				Thread.sleep(4000);
+			
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD5500i with Filter") && ProducttwoQuantity.equals("3")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				Thread.sleep(6000);
+				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
+				eleUtil.doActionsClick(buyAD3500withAD5500UpgradeToIotCheckbox);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD3500withAD5500increasequantitybtn);
+				eleUtil.doActionsClick(buyAD3500withAD5500increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
+				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD2000 with Filter") && ProducttwoQuantity.equals("1")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
+				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
+				Thread.sleep(3000);
+			
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD2000 with Filter") && ProducttwoQuantity.equals("2")) {
+
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD3500withAD2000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
+				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
+				Thread.sleep(4000);
+				
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD2000 with Filter") && ProducttwoQuantity.equals("3")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD3500withAD2000increasequantitybtn);
+				eleUtil.doActionsClick(buyAD3500withAD2000increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
+				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD2000i with Filter") && ProducttwoQuantity.equals("1")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
+				Thread.sleep(10000);
+				eleUtil.doActionsClick(buyAD3500withAD2000UpgradeToIotCheckbox);
+				Thread.sleep(5000);
+				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
+				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
+				Thread.sleep(6000);
+				
+			}
+
+			if (ModeltwoName.equalsIgnoreCase("AD2000i with Filter") && ProducttwoQuantity.equals("2")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD3500withAD2000UpgradeToIotCheckbox);
+				Thread.sleep(5000);
+				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
+				eleUtil.doActionsClick(buyAD3500withAD2000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
+				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD2000i with Filter") && ProducttwoQuantity.equals("3")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				Thread.sleep(6000);
+				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD3500withAD2000UpgradeToIotCheckbox);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD3500withAD2000increasequantitybtn);
+				eleUtil.doActionsClick(buyAD3500withAD2000increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
+				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD5500") && ProducttwoQuantity.equals("1")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD5500addToCart);
+				eleUtil.doActionsClick(buyAD5500addToCart);
+				Thread.sleep(3000);
+			
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD5500") && ProducttwoQuantity.equals("2")) {
+
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD5500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD5500addToCart);
+				eleUtil.doActionsClick(buyAD5500addToCart);
+				Thread.sleep(4000);
+			
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD5500") && ProducttwoQuantity.equals("3")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD5500increasequantitybtn);
+				eleUtil.doActionsClick(buyAD5500increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buyAD5500addToCart);
+				eleUtil.doActionsClick(buyAD5500addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD5500i") && ProducttwoQuantity.equals("1")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
+				Thread.sleep(10000);
+				eleUtil.doActionsClick(buyAD5500UpgradeToIotCheckbox);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD5500addToCart);
+				eleUtil.doActionsClick(buyAD5500addToCart);
+				Thread.sleep(6000);
+				
+			}
+
+			if (ModeltwoName.equalsIgnoreCase("AD5500i") && ProducttwoQuantity.equals("2")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD5500UpgradeToIotCheckbox);
+				Thread.sleep(5000);
+				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
+				eleUtil.doActionsClick(buyAD5500increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD5500addToCart);
+				eleUtil.doActionsClick(buyAD5500addToCart);
+				Thread.sleep(4000);
+				
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD5500i") && ProducttwoQuantity.equals("3")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				Thread.sleep(6000);
+				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD5500UpgradeToIotCheckbox);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD5500increasequantitybtn);
+				eleUtil.doActionsClick(buyAD5500increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buyAD5500addToCart);
+				eleUtil.doActionsClick(buyAD5500addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD2000") && ProducttwoQuantity.equals("1")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD2000addToCart);
+				eleUtil.doActionsClick(buyAD2000addToCart);
+				Thread.sleep(3000);
+		
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD2000") && ProducttwoQuantity.equals("2")) {
+
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD2000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD2000addToCart);
+				eleUtil.doActionsClick(buyAD2000addToCart);
+				Thread.sleep(4000);
+				
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD2000") && ProducttwoQuantity.equals("3")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD2000increasequantitybtn);
+				eleUtil.doActionsClick(buyAD2000increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buyAD2000addToCart);
+				eleUtil.doActionsClick(buyAD2000addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD2000i") && ProducttwoQuantity.equals("1")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
+				Thread.sleep(10000);
+				eleUtil.doActionsClick(buyAD2000UpgradeToIotCheckbox);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD2000addToCart);
+				eleUtil.doActionsClick(buyAD2000addToCart);
+				
+			}
+
+			if (ModeltwoName.equalsIgnoreCase("AD2000i") && ProducttwoQuantity.equals("2")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD2000UpgradeToIotCheckbox);
+				Thread.sleep(5000);
+				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
+				eleUtil.doActionsClick(buyAD2000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD2000addToCart);
+				eleUtil.doActionsClick(buyAD2000addToCart);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD2000i") && ProducttwoQuantity.equals("3")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				Thread.sleep(6000);
+				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD2000UpgradeToIotCheckbox);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD2000increasequantitybtn);
+				eleUtil.doActionsClick(buyAD2000increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buyAD2000addToCart);
+				eleUtil.doActionsClick(buyAD2000addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD1000") && ProducttwoQuantity.equals("1")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD1000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD1000addToCart);
+				eleUtil.doActionsClick(buyAD1000addToCart);
+				Thread.sleep(3000);
+				
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD1000") && ProducttwoQuantity.equals("2")) {
+
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD1000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD1000increasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD1000addToCart);
+				eleUtil.doActionsClick(buyAD1000addToCart);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD1000") && ProducttwoQuantity.equals("3")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD1000increasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD1000increasequantitybtn);
+				eleUtil.doActionsClick(buyAD1000increasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buyAD1000addToCart);
+				eleUtil.doActionsClick(buyAD1000addToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(4000);
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD1000 with Filter") && ProducttwoQuantity.equals("1")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD1000withFilterincreasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
+				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
+				Thread.sleep(3000);
+			
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD1000 with Filter") && ProducttwoQuantity.equals("2")) {
+
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD1000withFilterincreasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD1000withFilterincreasequantitybtn);
+				Thread.sleep(5000);
+				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
+				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
+				Thread.sleep(4000);
+				
+			}
+			if (ModeltwoName.equalsIgnoreCase("AD1000 with Filter") && ProducttwoQuantity.equals("3")) {
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				eleUtil.scrollTiView(buyAD1000withFilterincreasequantitybtn);
+				Thread.sleep(3000);
+				eleUtil.doActionsClick(buyAD1000withFilterincreasequantitybtn);
+				eleUtil.doActionsClick(buyAD1000withFilterincreasequantitybtn);
+				System.out.println("Selected Quantity");
+				Thread.sleep(2000);
+				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
+				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
+				System.out.println("Clicked on Add to Cart");
+				Thread.sleep(2000);
+				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
+				Thread.sleep(4000);
+			}
+
+
+			else {
+				System.out.println("Incorrect or No Second Model Selected");
+				// Fail - Incorrect payment option
+			}
+		}
+
+		catch (Exception ex) {
+			System.out.println("Failed Selecting Model");
+			throw ex;
+
+		}
+
+	}
+	
+	
 }

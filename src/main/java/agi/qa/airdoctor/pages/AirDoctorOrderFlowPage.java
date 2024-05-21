@@ -20,7 +20,7 @@ import agi.qa.airdoctor.utils.ExcelUtil;
 import agi.qa.airdoctor.utils.JavaScriptUtil;
 import agi.qa.airdoctor.utils.TimeUtil;
 
-public class Ad2500AffiliatePage {
+public class AirDoctorOrderFlowPage {
 
 	// Page class/Page Library/Page Object
 	private WebDriver driver;
@@ -178,7 +178,7 @@ public class Ad2500AffiliatePage {
 	private By deletebtn = By.xpath("//*[@id=\"main\"]/div[2]/div/div/div[2]/div/div/table/tbody/tr/td[6]/a[3]");
 
 	// 2. Public Page Class Const...
-	public Ad2500AffiliatePage(WebDriver driver) {
+	public AirDoctorOrderFlowPage(WebDriver driver) {
 		this.driver = driver;
 		eleUtil = new ElementUtil(driver);
 		JsUtil = new JavaScriptUtil(driver);
@@ -202,9 +202,9 @@ public class Ad2500AffiliatePage {
 		return url;
 	}
 
-	public Ad2500AffiliatePage getaffiliateURL(String url) {
+	public AirDoctorOrderFlowPage getaffiliateURL(String url) {
 		driver.get(url);
-		return new Ad2500AffiliatePage(driver);
+		return new AirDoctorOrderFlowPage(driver);
 	}
 
 	public String getBannerText() {
@@ -381,7 +381,7 @@ public class Ad2500AffiliatePage {
 
 	public void selectModel(String ModelName, String ProductQuantity) throws InterruptedException, Exception {
 		try {
-			if (ModelName.equalsIgnoreCase("AirDoctor 3500")||ModelName.equalsIgnoreCase("AirDoctor 3500") && ProductQuantity.equals("1")) {
+			if (ModelName.equalsIgnoreCase("AirDoctor 3500") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(5000);

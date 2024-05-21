@@ -13,6 +13,7 @@ import org.testng.asserts.SoftAssert;
 import agi.qa.airdoctor.constants.AppConstants;
 import agi.qa.airdoctor.factory.DriverFactory;
 import agi.qa.airdoctor.pages.Ad2500AffiliatePage;
+import agi.qa.airdoctor.pages.AirDoctorMemorialDayPage;
 import agi.qa.airdoctor.pages.LoginPage;
 import agi.qa.airdoctor.utils.ExcelUtil;
 
@@ -27,6 +28,7 @@ public class BaseTest {
 	
 	protected LoginPage loginPage;
 	protected Ad2500AffiliatePage affiliatePage;
+	protected AirDoctorMemorialDayPage memorialPage;
 	protected SoftAssert softAssert;
 	
 	//@Parameters({"browser"})

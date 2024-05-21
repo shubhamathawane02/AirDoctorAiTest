@@ -23,7 +23,7 @@ public class Ad2500AffiliatePageTest extends BaseTest {
 	public void affilatePageSetup() throws InterruptedException {
 
 		// affiliatePage = loginPage.clickShopNow();
-		affiliatePage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
+		//affiliatePage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 		// softAssert.assertEquals(loginPage.getLoginSuccessText(),AppConstants.LOGIN_SUCCESS_TEXT);
 		// pdpPage= loginPage.clickBuyNow();
 
