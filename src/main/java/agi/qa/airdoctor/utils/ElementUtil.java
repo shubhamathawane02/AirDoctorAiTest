@@ -20,6 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import agi.qa.airdoctor.exceptions.ElementException;
 import agi.qa.airdoctor.factory.DriverFactory;
+import io.qameta.allure.Step;
 
 //SRP: 
 public class ElementUtil {
@@ -105,7 +106,8 @@ public class ElementUtil {
 
 		return element;
 	}
-
+    
+	@Step("Entering value as {1} on {0}")
 	public void doSendKeys(By locator, String value) {
 		nullBlankCheck(value);
 		getElement(locator).clear();
@@ -388,6 +390,7 @@ public class ElementUtil {
 
 	}
 
+	@Step("Clicking on {0}")
 	public void doActionsClick(By locator) {
 		Actions act = new Actions(driver);
 		act.click(getElement(locator)).perform();
@@ -397,7 +400,8 @@ public class ElementUtil {
 		Actions act = new Actions(driver);
 		act.scrollToElement((getElement(locator))).perform();
 	}
-
+    
+	@Step("Entering the value as {1} on {0}")
 	public void doActionsSendKeys(By locator, String value) {
 		Actions act = new Actions(driver);
 		act.sendKeys(getElement(locator), value).perform();
@@ -412,6 +416,7 @@ public class ElementUtil {
 	 * @param locator
 	 * @param timeOut
 	 */
+	@Step("Clicking on {0}")
 	public void clickWhenReady(By locator, int timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));

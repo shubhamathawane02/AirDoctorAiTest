@@ -29,7 +29,10 @@ public class AirDoctorOrderFlowPage {
 	private Map<String, String> productMap = new HashMap<String, String>();
 
 	// 1. Private By Locators
-
+	
+	
+	
+	
 	// AD3500 locators
 	private By AD3500increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_135514']//input[@value='+']");
 	private By ad3500UpgradeToIotCheckbox = By.xpath(
@@ -294,35 +297,7 @@ public class AirDoctorOrderFlowPage {
 		System.out.println("product Details: \n" + productMap);
 		return productMap;
 	}
-
-	public void selectupsells(String Upsell_1, String Upsell_1_Option_Quantity) throws InterruptedException {
-
-		if (Upsell_1.equals("YES")) {
-			if (Upsell_1_Option_Quantity.equals("2")) {
-				WebElement staticDropdown = driver.findElement(By.id("wps_upsell_quantity_field"));
-				Select dropdown = new Select(staticDropdown);
-				dropdown.selectByVisibleText("2");
-				System.out.println("Upsell_1_Option_Quantity");
-				Thread.sleep(1000);
-			} else if (Upsell_1_Option_Quantity.equals("3")) {
-				WebElement staticDropdown = driver.findElement(By.id("wps_upsell_quantity_field"));
-				Select dropdown = new Select(staticDropdown);
-				dropdown.selectByVisibleText("3");
-				System.out.println("Upsell_1_Option_Quantity");
-				Thread.sleep(1000);
-			}
-
-			driver.findElement(By.xpath("//a[contains(text(),'ADD TO CART')]")).click();
-
-		} else if (Upsell_1.equals("NO")) {
-			driver.findElement(By.xpath("(//a[normalize-space()='No, thank you'])[1]")).click();
-		} else {
-			System.out.println("Incorrect Upsell-1 Options");
-			// Fail - incorrect Upsell-1 option
-		}
-
-	}
-
+	
 	public void getThankYoPageURL() throws URISyntaxException {
 		String originalUrl = driver.getCurrentUrl();
 		String username = "airdoctorazstg";

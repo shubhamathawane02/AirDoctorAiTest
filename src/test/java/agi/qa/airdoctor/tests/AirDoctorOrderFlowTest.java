@@ -37,9 +37,8 @@ public class AirDoctorOrderFlowTest extends BaseTest {
 	  @Test(dataProvider = "getDataFromExcel") 
 	  public void placeOrder(ITestContext testContext,String ModelName,String ProductQuantity,String ModeltwoName,String ProducttwoQuantity, String email, 
 	  String firstname, String lastname, String addone, String addtwo, String cty ,String state,String zipcode,
-	  String phonenumber, String upsellOne,String upsellQuantity, String subtotal, String flatrate, String tax, 
-	  String finaltotal) throws InterruptedException, Exception
-	  {
+	  String phonenumber,String Upsell1,String subtotal, String flatrate, String tax, 
+	  String finaltotal) throws InterruptedException, Exception {
 	try {
 	  memorialPage = loginPage.doLogin(prop.getProperty("username"),prop.getProperty("password"));
 	  memorialPage.clearCart();
@@ -52,6 +51,8 @@ public class AirDoctorOrderFlowTest extends BaseTest {
 	  Thread.sleep(5000);
 	  memorialPage.checkout(email,firstname, lastname, addone, addtwo, cty, state,zipcode,phonenumber); 
 	  Thread.sleep(15000);
+	  memorialPage.SelectUpsell(Upsell1);
+	  Thread.sleep(5000);
 	  memorialPage.getThankYoPageURL();
 	  Map<String, String>  productActDetailsMap = memorialPage.getorderdetails();
 	  softAssert.assertEquals(productActDetailsMap.get("subtotal"), subtotal);
