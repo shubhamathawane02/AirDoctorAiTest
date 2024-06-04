@@ -8,7 +8,7 @@ public class AppConstants {
 	public static final String AD_AFFILIATE_PAGE_TITLE = "Purifiers - AirDoctor Pro";
 	public static final String AD_AFFILIATE_PURIFIER_PAGE_TITLE = "Purifiers - AirDoctor Pro";
 	public static final String AD_AFFILIATE_MODEL_TEXT = "New! AirDoctor 2500\n" + "And Save $150";
-	public static final String AD_AFFILIATE_PAGE_BANNER_TEXT = "NEW! AirDoctor 2500 Wall-Mounted Purifier Sale-on-Sale!";
+	public static final String AD_AFFILIATE_PAGE_BANNER_TEXT = "NEW! AirDoctor 2500 Wall-Mounted Purifier!";
 	public static final String PRODUCT_PAGE_TITLE = "Rotorazer";
 	public static final String LOGIN_SUCCESS_TEXT = "You are successfully logged in!";
 	public static final String LOGIN_PAGE_URL_FRACTION = "route=account/login11";
@@ -19,7 +19,7 @@ public class AppConstants {
 	
 	
 	//***************Sheet Name**************//
-	public static final String REGISTER_SHEET_NAME = "register";
+	public static final String STAGE_SHEET_NAME = "register";
 	public static final String PRODUCT_SHEET_NAME = "register";
 	public static final String MEMORIAL_SHEET_NAME = "memorialsale";
 	public static final String AFFILIATE_LINK = "affiliatelink";

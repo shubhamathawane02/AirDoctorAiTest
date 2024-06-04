@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>AirDoctorAutomationTest</groupId>
@@ -12,11 +11,12 @@
 
   <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<extentreports-version>5.0.8</extentreports-version>
 		<aspectj.version>1.9.19</aspectj.version>
 		<selenium-version>4.19.0</selenium-version>
+		<surefire.plugin.version>3.0.0-M5</surefire.plugin.version>
 
 	</properties>
 
@@ -103,6 +103,13 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>${aspectj.version}</version>
 		</dependency>
+
+		<dependency>
+      <groupId>com.browserstack</groupId>
+      <artifactId>browserstack-java-sdk</artifactId>
+      <version>LATEST</version>
+      <scope>compile</scope>
+    </dependency>
 	</dependencies>
 
 	<build>
@@ -132,9 +139,8 @@
 						<!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> -->
 					</suiteXmlFiles>
 
-					<argLine>
-						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-					</argLine>
+					<argLine>-javaagent:"${com.browserstack:browserstack-java-sdk:jar}"
+-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
 
 
 				</configuration>
@@ -148,6 +154,20 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+
+
+			<plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <id>getClasspathFilenames</id>
+            <goals>
+              <goal>properties</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 		</plugins>
 
 	</build>

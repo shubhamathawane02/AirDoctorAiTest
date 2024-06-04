@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">AirDoctor Automation Test Results</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">May 23, 2024 03:29:32 pm</span></a>
+<a href="#"><span class="badge badge-primary">May 24, 2024 12:14:22 am</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('category-view')">
@@ -71,7 +76,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -79,31 +84,31 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">AirDoctorMemorialDaySaleOrderFlowSuite</a><a class="dropdown-item" href="#">AirDoctorOrderFlowTest</a>
+<a class="dropdown-item" href="#">AirDoctorOrderFlowTest</a><a class="dropdown-item" href="#">AirDoctorMemorialDaySaleOrderFlowSuite</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
           device="">
           <div class="test-detail">
             <p class="name">placeOrder</p>
             <p class="text-sm">
-              <span>3:29:51 pm</span> / <span>00:03:56:136</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>12:14:41 am</span> / <span>00:00:19:258</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 3:29:51 pm</span>
-<span class='badge badge-danger'>05.23.2024 3:33:47 pm</span>
-<span class='badge badge-default'>00:03:56:136</span>
+<h5 class="test-status text-fail">placeOrder</h5>
+<span class='badge badge-success'>05.24.2024 12:14:41 am</span>
+<span class='badge badge-danger'>05.24.2024 12:15:00 am</span>
+<span class='badge badge-default'>00:00:19:258</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -117,1423 +122,65 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:33:48 pm</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:15:03 am</td>
         <td>
-          Test passed
+          Test failed
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:33:48 pm</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:15:26 am</td>
         <td>
+          <textarea readonly class="code-block">org.openqa.selenium.UnsupportedCommandException: The command 'GET /session/f054023e7f6a6154b2435cc4743a733ac5b905c6/element/node-2664FE73-64EC-4408-A706-EFE0F7707CD3/shadow' was not found.
+Build info: version: '4.19.0', revision: '5f9cec8963'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
+Driver info: org.openqa.selenium.safari.SafariDriver
+Command: [f054023e7f6a6154b2435cc4743a733ac5b905c6, getElementShadowRoot {id=node-2664FE73-64EC-4408-A706-EFE0F7707CD3}]
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 15.6.1, optimalHubUrl: hub-aps.browserstack.com, platformName: mac, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, safari:platformBuildVersion: 21G83, safari:platformVersion: 12.5.1, safari:useSimulator: false, setWindowRect: true, strictFileInteractability: false, webdriver.remote.sessionid: f054023e7f6a6154b2435cc4743..., webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+Element: [[SafariDriver: Safari on mac (f054023e7f6a6154b2435cc4743a733ac5b905c6)] -> xpath: //aside[@class='dg-consent-banner theme-neutral position-bottom visible']]
+Session ID: f054023e7f6a6154b2435cc4743a733ac5b905c6
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.getShadowRoot(RemoteWebElement.java:217)
+	at agi.qa.airdoctor.pages.LoginPage.doLogin(LoginPage.java:84)
+	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:41)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:443)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:67)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+</textarea>
           
     <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716458628509.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716458628509.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="2"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>3:33:49 pm</span> / <span>00:03:00:441</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 3:33:49 pm</span>
-<span class='badge badge-danger'>05.23.2024 3:36:49 pm</span>
-<span class='badge badge-default'>00:03:00:441</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:36:49 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:36:50 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716458810148.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716458810148.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="3"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>3:36:50 pm</span> / <span>00:02:57:658</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 3:36:50 pm</span>
-<span class='badge badge-danger'>05.23.2024 3:39:48 pm</span>
-<span class='badge badge-default'>00:02:57:658</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:39:48 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:39:48 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716458988300.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716458988300.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="4"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>3:39:48 pm</span> / <span>00:02:50:844</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 3:39:48 pm</span>
-<span class='badge badge-danger'>05.23.2024 3:42:39 pm</span>
-<span class='badge badge-default'>00:02:50:844</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:42:39 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:42:39 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716459159607.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716459159607.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="5"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>3:42:39 pm</span> / <span>00:02:42:244</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 3:42:39 pm</span>
-<span class='badge badge-danger'>05.23.2024 3:45:22 pm</span>
-<span class='badge badge-default'>00:02:42:244</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:45:22 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:45:22 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716459322405.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716459322405.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="6"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>3:45:22 pm</span> / <span>00:03:08:266</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 3:45:22 pm</span>
-<span class='badge badge-danger'>05.23.2024 3:48:30 pm</span>
-<span class='badge badge-default'>00:03:08:266</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:48:30 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:48:31 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716459511156.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716459511156.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="7"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>3:48:31 pm</span> / <span>00:02:38:674</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 3:48:31 pm</span>
-<span class='badge badge-danger'>05.23.2024 3:51:10 pm</span>
-<span class='badge badge-default'>00:02:38:674</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:51:10 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:51:10 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716459670350.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716459670350.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="8"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>3:51:10 pm</span> / <span>00:02:59:951</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 3:51:10 pm</span>
-<span class='badge badge-danger'>05.23.2024 3:54:10 pm</span>
-<span class='badge badge-default'>00:02:59:951</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:54:10 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:54:10 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716459850801.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716459850801.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="9"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>3:54:11 pm</span> / <span>00:02:53:196</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 3:54:11 pm</span>
-<span class='badge badge-danger'>05.23.2024 3:57:04 pm</span>
-<span class='badge badge-default'>00:02:53:196</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:57:04 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:57:04 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716460024480.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716460024480.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="10"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>3:57:04 pm</span> / <span>00:02:38:934</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 3:57:04 pm</span>
-<span class='badge badge-danger'>05.23.2024 3:59:43 pm</span>
-<span class='badge badge-default'>00:02:38:934</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:59:43 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:59:43 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716460183989.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716460183989.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="11"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>3:59:44 pm</span> / <span>00:02:33:714</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 3:59:44 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:02:17 pm</span>
-<span class='badge badge-default'>00:02:33:714</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:02:17 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:02:18 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716460338178.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716460338178.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="12"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:02:18 pm</span> / <span>00:02:54:740</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:02:18 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:05:13 pm</span>
-<span class='badge badge-default'>00:02:54:740</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:05:13 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:05:13 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716460513402.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716460513402.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="13"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:05:13 pm</span> / <span>00:02:49:178</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:05:13 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:08:02 pm</span>
-<span class='badge badge-default'>00:02:49:178</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:08:02 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:08:03 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716460683049.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716460683049.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="14"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:08:03 pm</span> / <span>00:03:14:877</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:08:03 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:11:18 pm</span>
-<span class='badge badge-default'>00:03:14:877</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:11:18 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:11:18 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716460878429.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716460878429.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="15"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:11:18 pm</span> / <span>00:03:09:054</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:11:18 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:14:27 pm</span>
-<span class='badge badge-default'>00:03:09:054</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:14:27 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:14:27 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716461067983.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716461067983.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="16"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:14:28 pm</span> / <span>00:02:40:544</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:14:28 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:17:08 pm</span>
-<span class='badge badge-default'>00:02:40:544</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:17:08 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:17:09 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716461229027.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716461229027.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="17"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:17:09 pm</span> / <span>00:02:49:233</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:17:09 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:19:58 pm</span>
-<span class='badge badge-default'>00:02:49:233</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:19:58 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:19:58 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716461398801.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716461398801.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="18"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:19:59 pm</span> / <span>00:02:31:990</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:19:59 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:22:31 pm</span>
-<span class='badge badge-default'>00:02:31:990</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:22:31 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:22:31 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716461551306.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716461551306.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="19"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:22:31 pm</span> / <span>00:02:51:053</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:22:31 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:25:22 pm</span>
-<span class='badge badge-default'>00:02:51:053</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:25:22 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:25:22 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716461722811.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716461722811.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="20"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:25:23 pm</span> / <span>00:02:33:467</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:25:23 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:27:56 pm</span>
-<span class='badge badge-default'>00:02:33:467</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:27:56 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:27:56 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716461876805.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716461876805.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="21"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:27:57 pm</span> / <span>00:02:52:245</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:27:57 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:30:49 pm</span>
-<span class='badge badge-default'>00:02:52:245</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:30:49 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:30:49 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716462049509.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716462049509.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="22"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:30:49 pm</span> / <span>00:02:55:872</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:30:49 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:33:45 pm</span>
-<span class='badge badge-default'>00:02:55:872</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:33:45 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:33:45 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716462225838.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716462225838.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="23"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:33:46 pm</span> / <span>00:02:58:336</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:33:46 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:36:44 pm</span>
-<span class='badge badge-default'>00:02:58:336</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:36:44 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:36:44 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716462404669.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716462404669.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="24"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:36:44 pm</span> / <span>00:02:32:726</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:36:44 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:39:17 pm</span>
-<span class='badge badge-default'>00:02:32:726</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:39:17 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:39:17 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716462557898.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716462557898.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="25"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:39:18 pm</span> / <span>00:02:34:934</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:39:18 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:41:53 pm</span>
-<span class='badge badge-default'>00:02:34:934</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:41:53 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:41:53 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716462713471.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716462713471.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="26"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:41:53 pm</span> / <span>00:02:49:668</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:41:53 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:44:43 pm</span>
-<span class='badge badge-default'>00:02:49:668</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:44:43 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:44:43 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716462883699.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716462883699.png">
-    <div class="title">placeOrder</div>
-    </div></div>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="27"
-          author=""
-          tag="AirDoctorMemorialDaySaleOrderFlowSuite AirDoctorOrderFlowTest"
-          device="">
-          <div class="test-detail">
-            <p class="name">placeOrder</p>
-            <p class="text-sm">
-              <span>4:44:43 pm</span> / <span>00:02:43:634</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">placeOrder</h5>
-<span class='badge badge-success'>05.23.2024 4:44:43 pm</span>
-<span class='badge badge-danger'>05.23.2024 4:47:27 pm</span>
-<span class='badge badge-default'>00:02:43:634</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">AirDoctorMemorialDaySaleOrderFlowSuite</span>
-<span class="badge badge-pill badge-default">AirDoctorOrderFlowTest</span></div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:47:27 pm</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:47:27 pm</td>
-        <td>
-          
-    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716463047786.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716463047786.png">
+<img data-featherlight='C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716489926032.png' src="C:\Users\MridulVashistha\eclipse-workspace\AirDoctorAutomationTest/screenshot/placeOrder_1716489926032.png">
     <div class="title">placeOrder</div>
     </div></div>
         </td>
@@ -1552,7 +199,56 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view category-view attributes-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.UnsupportedCommandException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.UnsupportedCommandException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>00:14:41 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>placeOrder</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view category-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
@@ -1563,15 +259,15 @@
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>27</span>
+<span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">AirDoctorMemorialDaySaleOrderFlowSuite</p>
-<p class="duration text-sm">27 tests</p>
+<p class="name">AirDoctorOrderFlowTest</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>AirDoctorMemorialDaySaleOrderFlowSuite</h4>
-<span status="pass" class='badge log pass-bg'>27 passed</span>
+<h4>AirDoctorOrderFlowTest</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -1582,193 +278,11 @@
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:29:51 pm</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>00:14:41 am</td>
 <td>
 <a href="#" class="linked" test-id='1' id='1'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:33:49 pm</td>
-<td>
-<a href="#" class="linked" test-id='2' id='2'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:36:50 pm</td>
-<td>
-<a href="#" class="linked" test-id='3' id='3'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:39:48 pm</td>
-<td>
-<a href="#" class="linked" test-id='4' id='4'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:42:39 pm</td>
-<td>
-<a href="#" class="linked" test-id='5' id='5'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:45:22 pm</td>
-<td>
-<a href="#" class="linked" test-id='6' id='6'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:48:31 pm</td>
-<td>
-<a href="#" class="linked" test-id='7' id='7'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:51:10 pm</td>
-<td>
-<a href="#" class="linked" test-id='8' id='8'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:54:11 pm</td>
-<td>
-<a href="#" class="linked" test-id='9' id='9'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:57:04 pm</td>
-<td>
-<a href="#" class="linked" test-id='10' id='10'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:59:44 pm</td>
-<td>
-<a href="#" class="linked" test-id='11' id='11'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:02:18 pm</td>
-<td>
-<a href="#" class="linked" test-id='12' id='12'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:05:13 pm</td>
-<td>
-<a href="#" class="linked" test-id='13' id='13'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:08:03 pm</td>
-<td>
-<a href="#" class="linked" test-id='14' id='14'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:11:18 pm</td>
-<td>
-<a href="#" class="linked" test-id='15' id='15'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:14:28 pm</td>
-<td>
-<a href="#" class="linked" test-id='16' id='16'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:17:09 pm</td>
-<td>
-<a href="#" class="linked" test-id='17' id='17'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:19:59 pm</td>
-<td>
-<a href="#" class="linked" test-id='18' id='18'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:22:31 pm</td>
-<td>
-<a href="#" class="linked" test-id='19' id='19'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:25:23 pm</td>
-<td>
-<a href="#" class="linked" test-id='20' id='20'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:27:57 pm</td>
-<td>
-<a href="#" class="linked" test-id='21' id='21'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:30:49 pm</td>
-<td>
-<a href="#" class="linked" test-id='22' id='22'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:33:46 pm</td>
-<td>
-<a href="#" class="linked" test-id='23' id='23'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:36:44 pm</td>
-<td>
-<a href="#" class="linked" test-id='24' id='24'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:39:18 pm</td>
-<td>
-<a href="#" class="linked" test-id='25' id='25'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:41:53 pm</td>
-<td>
-<a href="#" class="linked" test-id='26' id='26'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:44:43 pm</td>
-<td>
-<a href="#" class="linked" test-id='27' id='27'>placeOrder</a>
 </td>
 </tr>
 </tbody>
@@ -1778,15 +292,15 @@
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>27</span>
+<span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">AirDoctorOrderFlowTest</p>
-<p class="duration text-sm">27 tests</p>
+<p class="name">AirDoctorMemorialDaySaleOrderFlowSuite</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>AirDoctorOrderFlowTest</h4>
-<span status="pass" class='badge log pass-bg'>27 passed</span>
+<h4>AirDoctorMemorialDaySaleOrderFlowSuite</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -1797,193 +311,11 @@
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:29:51 pm</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>00:14:41 am</td>
 <td>
 <a href="#" class="linked" test-id='1' id='1'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:33:49 pm</td>
-<td>
-<a href="#" class="linked" test-id='2' id='2'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:36:50 pm</td>
-<td>
-<a href="#" class="linked" test-id='3' id='3'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:39:48 pm</td>
-<td>
-<a href="#" class="linked" test-id='4' id='4'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:42:39 pm</td>
-<td>
-<a href="#" class="linked" test-id='5' id='5'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:45:22 pm</td>
-<td>
-<a href="#" class="linked" test-id='6' id='6'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:48:31 pm</td>
-<td>
-<a href="#" class="linked" test-id='7' id='7'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:51:10 pm</td>
-<td>
-<a href="#" class="linked" test-id='8' id='8'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:54:11 pm</td>
-<td>
-<a href="#" class="linked" test-id='9' id='9'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:57:04 pm</td>
-<td>
-<a href="#" class="linked" test-id='10' id='10'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:59:44 pm</td>
-<td>
-<a href="#" class="linked" test-id='11' id='11'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:02:18 pm</td>
-<td>
-<a href="#" class="linked" test-id='12' id='12'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:05:13 pm</td>
-<td>
-<a href="#" class="linked" test-id='13' id='13'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:08:03 pm</td>
-<td>
-<a href="#" class="linked" test-id='14' id='14'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:11:18 pm</td>
-<td>
-<a href="#" class="linked" test-id='15' id='15'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:14:28 pm</td>
-<td>
-<a href="#" class="linked" test-id='16' id='16'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:17:09 pm</td>
-<td>
-<a href="#" class="linked" test-id='17' id='17'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:19:59 pm</td>
-<td>
-<a href="#" class="linked" test-id='18' id='18'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:22:31 pm</td>
-<td>
-<a href="#" class="linked" test-id='19' id='19'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:25:23 pm</td>
-<td>
-<a href="#" class="linked" test-id='20' id='20'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:27:57 pm</td>
-<td>
-<a href="#" class="linked" test-id='21' id='21'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:30:49 pm</td>
-<td>
-<a href="#" class="linked" test-id='22' id='22'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:33:46 pm</td>
-<td>
-<a href="#" class="linked" test-id='23' id='23'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:36:44 pm</td>
-<td>
-<a href="#" class="linked" test-id='24' id='24'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:39:18 pm</td>
-<td>
-<a href="#" class="linked" test-id='25' id='25'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:41:53 pm</td>
-<td>
-<a href="#" class="linked" test-id='26' id='26'>placeOrder</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:44:43 pm</td>
-<td>
-<a href="#" class="linked" test-id='27' id='27'>placeOrder</a>
 </td>
 </tr>
 </tbody>
@@ -2003,25 +335,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>May 23, 2024 03:29:32 pm</h3>
+<h3>May 24, 2024 12:14:22 am</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>May 23, 2024 04:47:28 pm</h3>
+<h3>May 24, 2024 12:15:34 am</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>27</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -2037,12 +369,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>27</b> tests passed
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='100%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -2060,9 +392,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>54</b> events passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
+<small data-tooltip='100%'><b>2</b> events failed,
 <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -2079,7 +411,7 @@
 </div></div>
 <script>
 var timeline = {
-"placeOrder":236.136,"placeOrder":180.441,"placeOrder":177.658,"placeOrder":170.844,"placeOrder":162.244,"placeOrder":188.266,"placeOrder":158.674,"placeOrder":179.951,"placeOrder":173.196,"placeOrder":158.934,"placeOrder":153.714,"placeOrder":174.74,"placeOrder":169.178,"placeOrder":194.877,"placeOrder":189.054,"placeOrder":160.544,"placeOrder":169.233,"placeOrder":151.99,"placeOrder":171.053,"placeOrder":153.467,"placeOrder":172.245,"placeOrder":175.872,"placeOrder":178.336,"placeOrder":152.726,"placeOrder":154.934,"placeOrder":169.668,"placeOrder":163.634
+"placeOrder":19.258
 };
 </script>
 <div class="row">
@@ -2089,20 +421,20 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>AirDoctorMemorialDaySaleOrderFlowSuite</td>
-<td>27</td>
+<td>AirDoctorOrderFlowTest</td>
+<td>0</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>0%</td>
 </tr>
 <tr>
-<td>AirDoctorOrderFlowTest</td>
-<td>27</td>
+<td>AirDoctorMemorialDaySaleOrderFlowSuite</td>
+<td>0</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>0%</td>
 </tr>
 </tbody>
 </table></div>
@@ -2147,8 +479,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 27,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -2164,8 +496,8 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 54,
-failEvents: 0,
+passEvents: 0,
+failEvents: 2,
 warningEvents: 0,
 skipEvents: 0,
 infoEvents: 0

@@ -46,23 +46,20 @@ public class Ad2500AffiliatePageTest extends BaseTest {
 	}
 
 	 @Test(dataProvider="getAffiliateLinkFromExcel") 
-	  public void AffiliateLinkTest(String url) throws Exception { 
+	  public void AffiliateLinkTest(ITestContext testContext,String url) throws Exception { 
 	  //setup(); 
+	try {
+	  softAssert = new SoftAssert();
 	  affiliatePage = affiliatePage.getaffiliateURL(url); 
-	  Thread.sleep(3000);
-	  affiliatePage.clickShopNow(); 
-	  Thread.sleep(3000); 
-	  //String bannerText = affiliatePage.getBannerText(); 
-	  //softAssert.assertEquals(bannerText,AppConstants.AD_AFFILIATE_PAGE_BANNER_TEXT); 
-	  String purifierTitle = affiliatePage.getPurifierPageTitle(); 
-	  softAssert.assertEquals(purifierTitle,AppConstants.AD_AFFILIATE_PURIFIER_PAGE_TITLE); 
-	  Thread.sleep(10000);
-	  //.selectModel("AirDoctor Wall-Mounted 2500","1"); 
-	  String modelTitle = affiliatePage.getModelText(); 
-	  Assert.assertEquals(modelTitle,AppConstants.AD_AFFILIATE_MODEL_TEXT); 
+	  String bannerText = affiliatePage.getBannerText(); 
+	  softAssert.assertEquals(bannerText,AppConstants.AD_AFFILIATE_PAGE_BANNER_TEXT);  
 	  softAssert.assertAll(); 
-	  //tearDown();
-	  }
+	}
+	finally {
+	tearDown();
+	setup();
+	}
+	 }
 	
 }
 

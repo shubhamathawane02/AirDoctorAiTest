@@ -14,14 +14,13 @@ import agi.qa.airdoctor.constants.AppConstants;
 import agi.qa.airdoctor.factory.DriverFactory;
 import agi.qa.airdoctor.pages.Ad2500AffiliatePage;
 import agi.qa.airdoctor.pages.AirDoctorMemorialDayPage;
-import agi.qa.airdoctor.pages.AirDoctorStagePage;
 import agi.qa.airdoctor.pages.LoginPage;
 import agi.qa.airdoctor.utils.ExcelUtil;
 
 
 
 
-public class BaseTest {
+public class BrowserStackBaseTest {
 	
 	WebDriver driver;
 	protected Properties prop;
@@ -30,7 +29,6 @@ public class BaseTest {
 	protected LoginPage loginPage;
 	protected Ad2500AffiliatePage affiliatePage;
 	protected AirDoctorMemorialDayPage memorialPage;
-	protected AirDoctorStagePage airddoctorstg;
 	protected SoftAssert softAssert;
 	
 	//@Parameters({"browser"})
@@ -51,8 +49,8 @@ public class BaseTest {
 		df = new DriverFactory();
 		prop = df.initProp();
 		driver = df.initDriver(prop);
-		//loginPage = new LoginPage(driver);
-		affiliatePage = new Ad2500AffiliatePage(driver);
+		loginPage = new LoginPage(driver);
+		//affiliatePage = new Ad2500AffiliatePage(driver);
 		//softAssert = new SoftAssert();
 	}
 	

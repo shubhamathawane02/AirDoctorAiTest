@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="agi.qa.airdoctor.tests.AirDoctorOrderFlowTest">
+      <class name="agi.qa.airdoctor.tests.Ad2500AffiliatePageTest">
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="placeOrder" invocation-numbers="0 1 8 11 21 22 23 24 25 26"/>
+          <include name="AffiliateLinkTest"/>
           <include name="affilatePageSetup"/>
         </methods>
-      </class> <!-- agi.qa.airdoctor.tests.AirDoctorOrderFlowTest -->
+      </class> <!-- agi.qa.airdoctor.tests.Ad2500AffiliatePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

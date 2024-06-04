@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>18/10/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Thu May 23 14:00:20 IST 2024</td>
+<td>Started on:</td><td>Tue Jun 04 21:02:54 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>4327 seconds (4327328 ms)</td>
+<tr><td>Total time:</td><td>4 seconds (4913 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,31 +67,62 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD3500i, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 1055 Wild Horse Canyon Rd, , Green River, Wyoming, 82935, 83455666377, Yes, $2,292.98, $29.95, $137.58, $2,460.51</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$2,292.98] but found [$429.00],
-	expected [$137.58] but found [$25.74],
-	expected [$2,460.51] but found [$484.69]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
+<td title='agi.qa.airdoctor.tests.Ad2500AffiliatePageTest.AffiliateLinkTest()'><b>AffiliateLinkTest</b><br>Test class: agi.qa.airdoctor.tests.Ad2500AffiliatePageTest</td>
+<td><div><pre>java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Sheet.getLastRowNum()&quot; because &quot;agi.qa.airdoctor.utils.ExcelUtil.sheet&quot; is null
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:50)
+	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:146)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:820)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:762)
+	at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:60)
+	at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:39)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:771)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+	at org.testng.TestNG.runSuites(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:1000)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Sheet.getLastRowNum()&quot; because &quot;agi.qa.airdoctor.utils.ExcelUtil.sheet&quot; is null
+	at agi.qa.airdoctor.utils.ExcelUtil.getTestData(ExcelUtil.java:39)
+	at agi.qa.airdoctor.tests.Ad2500AffiliatePageTest.getAffiliateLinkFromExcel(Ad2500AffiliatePageTest.java:39)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:77)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:46)
+	... 25 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace61780583", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace61780583'><pre>java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Sheet.getLastRowNum()&quot; because &quot;agi.qa.airdoctor.utils.ExcelUtil.sheet&quot; is null
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:50)
+	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:146)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:820)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:762)
+	at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:60)
+	at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:39)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:771)
 	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -111,845 +142,20 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace22051779", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace22051779'><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$2,292.98] but found [$429.00],
-	expected [$137.58] but found [$25.74],
-	expected [$2,460.51] but found [$484.69]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Sheet.getLastRowNum()&quot; because &quot;agi.qa.airdoctor.utils.ExcelUtil.sheet&quot; is null
+	at agi.qa.airdoctor.utils.ExcelUtil.getTestData(ExcelUtil.java:39)
+	at agi.qa.airdoctor.tests.Ad2500AffiliatePageTest.getAffiliateLinkFromExcel(Ad2500AffiliatePageTest.java:39)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:77)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:46)
+	... 25 more
 </pre></div></td>
-<td>146</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD3500, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 424 W Markham St, , Little Rock, Arkansas, 72201, 83455666377, Yes, $379.00, $29.95, $35.28, $444.23</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$379.00] but found [$429.00],
-	expected [$35.28] but found [$39.60],
-	expected [$444.23] but found [$498.55]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1835492991", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1835492991'><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$379.00] but found [$429.00],
-	expected [$35.28] but found [$39.60],
-	expected [$444.23] but found [$498.55]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>159</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD5500, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 2100 Killebrew Dr, , Bloomington, Minnesota, 55425, 83455666377, , $699.00, $29.95, $65.79, $794.74</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
-Build info: version: &apos;4.19.0&apos;, revision: &apos;5f9cec8963&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d765ab0316d5003f08f760da157b83dd, clickElement {id=f.19BB2B013E1B290BB4E55F919688DF53.d.4CE9AAD606CCE8D62737E94CCA76C590.e.124}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.76, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f..., userDataDir: C:\Users\MRIDUL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61057}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61057/devtoo..., se:cdpVersion: 125.0.6422.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (d765ab0316d5003f08f760da157b83dd)] -&gt; name: login]
-Session ID: d765ab0316d5003f08f760da157b83dd
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:396)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:352)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at agi.qa.airdoctor.utils.ElementUtil.doClick(ElementUtil.java:150)
-	at agi.qa.airdoctor.pages.LoginPage.doLogin(LoginPage.java:91)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:43)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.util.concurrent.TimeoutException
-	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:379)
-	... 40 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace240779865", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace240779865'><pre>org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
-Build info: version: &apos;4.19.0&apos;, revision: &apos;5f9cec8963&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d765ab0316d5003f08f760da157b83dd, clickElement {id=f.19BB2B013E1B290BB4E55F919688DF53.d.4CE9AAD606CCE8D62737E94CCA76C590.e.124}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.76, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f..., userDataDir: C:\Users\MRIDUL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61057}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61057/devtoo..., se:cdpVersion: 125.0.6422.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (d765ab0316d5003f08f760da157b83dd)] -&gt; name: login]
-Session ID: d765ab0316d5003f08f760da157b83dd
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:396)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:352)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at agi.qa.airdoctor.utils.ElementUtil.doClick(ElementUtil.java:150)
-	at agi.qa.airdoctor.pages.LoginPage.doLogin(LoginPage.java:91)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:43)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.util.concurrent.TimeoutException
-	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:379)
-	... 40 more
-</pre></div></td>
-<td>234</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD3500i, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 3333 13th Ave S, , Fargo, North Dakota, 58103, 83455666377, Yes, , , , </td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	expected [] but found [$429.00],
-	expected [] but found [$29.95],
-	expected [] but found [$34.43],
-	expected [] but found [$493.38]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1260999448", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1260999448'><pre>java.lang.AssertionError: The following asserts failed:
-	expected [] but found [$429.00],
-	expected [] but found [$29.95],
-	expected [] but found [$34.43],
-	expected [] but found [$493.38]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>143</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD3500, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 3423 Percy Priest Dr, , Nashville, Tennessee, 37214, 83455666377, , $379.00, $29.95, $36.01, $444.96</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$36.01] but found [$37.83],
-	expected [$444.96] but found [$446.78]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at jdk.internal.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace923389249", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace923389249'><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$36.01] but found [$37.83],
-	expected [$444.96] but found [$446.78]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at jdk.internal.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>155</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD5500, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 2222 W Loop S, , Houston, Texas, 77027, 83455666377, , $699.00, $29.95, $27.96, $756.91</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$27.96] but found [$60.14],
-	expected [$756.91] but found [$789.09]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at jdk.internal.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1197960780", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1197960780'><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$27.96] but found [$60.14],
-	expected [$756.91] but found [$789.09]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at jdk.internal.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>169</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD2000, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 870 Williston Rd, , South Burlington, Vermont, 05403, 83455666377, , $319.00, $52.95, $18.60, $390.55</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$52.95] but found [$19.95],
-	expected [$18.60] but found [$23.73],
-	expected [$390.55] but found [$362.68]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at jdk.internal.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace374572524", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace374572524'><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$52.95] but found [$19.95],
-	expected [$18.60] but found [$23.73],
-	expected [$390.55] but found [$362.68]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at jdk.internal.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>164</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD1000, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 300 112th Ave SE, , Bellevue, Washington, 98004, 83455666377, , $329.00, $19.95, $25.99, $374.94</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$25.99] but found [$35.60],
-	expected [$374.94] but found [$384.55]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at jdk.internal.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace391426598", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace391426598'><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$25.99] but found [$35.60],
-	expected [$374.94] but found [$384.55]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at jdk.internal.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>138</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD3500i, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 2110 Rose St, , La Crosse, Wisconsin, 54603, 83455666377, , $429.00, $29.95, $33.89, $492.84</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$33.89] but found [$25.25],
-	expected [$492.84] but found [$484.20]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at jdk.internal.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace200386795", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace200386795'><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$33.89] but found [$25.25],
-	expected [$492.84] but found [$484.20]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at jdk.internal.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>141</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD5500i, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 350 Conference Center Way, , Bridgeport, West Virginia, 26330, 83455666377, , $749.00, $29.95, $46.74, $825.69</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$46.74] but found [$54.53],
-	expected [$825.69] but found [$833.48]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at jdk.internal.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1626839936", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1626839936'><pre>java.lang.AssertionError: The following asserts failed:
-	expected [$46.74] but found [$54.53],
-	expected [$825.69] but found [$833.48]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder(AirDoctorOrderFlowTest.java:69)
-	at jdk.internal.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:770)
-	at org.testng.TestRunner.run(TestRunner.java:591)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-	at org.testng.TestNG.runSuites(TestNG.java:1032)
-	at org.testng.TestNG.run(TestNG.java:1000)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>149</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD3500, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 351 Pitkin St, , East Hartford, Connecticut, 06108, 83455666377, No, $379.00, $29.95, $25.97, $434.92</td>
-<td></td>
-<td>161</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD5500i with Filter, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 4025 Windward Plaza, , Alpharetta, Georgia, 30005, 83455666377, , $956.99, Free Shipping, $74.17, $1,031.16</td>
-<td></td>
-<td>152</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD2000 with Filter, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 2005 Kālia Rd, , Honolulu, Hawaii, 96815, 83455666377, , $393.99, $110.00, $22.68, $526.67</td>
-<td></td>
-<td>140</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD2000i with Filter, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 8787 Keystone Crossing, , Indianapolis, Indiana, 46240, 83455666377, , $443.99, Free Shipping, $31.08, $475.07</td>
-<td></td>
-<td>157</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD1000 with Filter, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 1075 E Turtle Court, , Park City, Kansas, 67147, 83455666377, , $380.99, Free Shipping, $28.57, $409.56</td>
-<td></td>
-<td>137</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD3500, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 286 Grand Ave, , Mackinac Island, Michigan, 49757, 83455666377, , $379.00, $29.95, $24.54, $433.49</td>
-<td></td>
-<td>157</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD2000, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 1505 S Adams St, , Fulton, Mississippi, 38843, 83455666377, , $319.00, $19.95, $23.73, $362.68</td>
-<td></td>
-<td>160</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD1000, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 2800 Campus Walk Ave, , Durham, North Carolina, 27705, 83455666377, Yes, $329.00, $19.95, $26.18, $375.13</td>
-<td></td>
-<td>137</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD5500i, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 5353 N 27th St, , Lincoln, Nebraska, 68521, 83455666377, , $749.00, $29.95, $56.48, $835.43</td>
-<td></td>
-<td>150</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD2000i, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 4 Tower Center Blvd, , East Brunswick, New Jersey, 08816, 83455666377, , $369.00, $19.95, $25.77, $414.72</td>
-<td></td>
-<td>148</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD3500 with Filter, 1, AD5500i with Filter, 2, gasftesting2@gmail.com, Mridul, Vashistha, 800 Rio Grande Blvd NW, , Albuquerque, New Mexico, 87104, 83455666377, , $2,391.97, Free Shipping, $182.38, $2,574.35</td>
-<td></td>
-<td>168</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD3500i with Filter, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 790 7th Ave, , New York, New York, 10019, 83455666377, , $527.99, Free Shipping, $46.86, $574.85</td>
-<td></td>
-<td>160</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD5500 with Filter, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 175 Hutchinson Ave, , Columbus, Ohio, 43235, 83455666377, , $906.99, Free Shipping, $68.02, $975.01</td>
-<td></td>
-<td>147</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD5500i with Filter, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 8000 Jonestown Rd, , Harrisburg, Pennsylvania, 17112, 83455666377, , $956.99, Free Shipping, $57.42, $1,014.41</td>
-<td></td>
-<td>153</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD2000 with Filter, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 11 Dorrance St, , Providence, Rhode Island, 02903, 83455666377, , $393.99, Free Shipping, $27.58, $421.57</td>
-<td></td>
-<td>136</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD2000i with Filter, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 10000 Beach Club Dr, , Myrtle Beach, South Carolina, 29572, 83455666377, , $443.99, Free Shipping, $35.52, $479.51</td>
-<td></td>
-<td>157</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD1000 with Filter, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 1416 N Elk Vale Rd, , Box Elder, South Dakota, 57703, 83455666377, , $380.99, Free Shipping, $23.62, $404.61</td>
-<td></td>
-<td>134</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
-<tr>
-<td title='agi.qa.airdoctor.tests.AirDoctorOrderFlowTest.placeOrder()'><b>placeOrder</b><br>Test class: agi.qa.airdoctor.tests.AirDoctorOrderFlowTest<br>Parameters: org.testng.TestRunner@13e1e816, AD2000i, 1, , , gasftesting2@gmail.com, Mridul, Vashistha, 102 Lake St, , Shreveport, Louisiana, 71101, 83455666377, , $369.00, $19.95, $33.39, $422.34</td>
-<td></td>
-<td>151</td>
-<td>agi.qa.airdoctor.tests.AirDoctorOrderFlowTest@3a2b2322</td></tr>
+<td>0</td>
+<td>agi.qa.airdoctor.tests.Ad2500AffiliatePageTest@76cf841</td></tr>
 </table><p>
 </body>
 </html>

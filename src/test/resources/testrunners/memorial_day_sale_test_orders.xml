@@ -15,7 +15,7 @@
 
 	
 	<test name="AirDoctor Memorial Day Sale Order Flow Test chrome">
-		<parameter name="browser" value="chrome" />
+		<parameter name="browser" value="safari" />
 
 		<classes>
 			<class name="agi.qa.airdoctor.tests.AirDoctorOrderFlowTest" />

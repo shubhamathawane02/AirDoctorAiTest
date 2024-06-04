@@ -79,8 +79,8 @@ public class LoginPage {
 		return eleUtil.isElementDisplayed(loginIcon);
 	}
 
-	public AirDoctorMemorialDayPage doLogin(String username, String pwd) throws InterruptedException{
-		Thread.sleep(2000);
+	public AirDoctorStagePage doLogin(String username, String pwd) throws InterruptedException{
+		Thread.sleep(5000);
 		driver.findElement(shadowroot).getShadowRoot().findElement(cookiebannerbtn).click();
 		Thread.sleep(5000);
 		eleUtil.clickWhenReady(loginIcon, TimeUtil.DEFAULT_LONG_TIME);
@@ -89,7 +89,7 @@ public class LoginPage {
 		eleUtil.doSendKeys(usernameField, username);
 		eleUtil.doSendKeys(passwordField, pwd);
 		eleUtil.doClick(loginButton);
-		return new AirDoctorMemorialDayPage(driver);
+		return new AirDoctorStagePage(driver);
 	}
 	
 	public Ad2500AffiliatePage loginAgain(String username, String pwd) throws InterruptedException{
@@ -104,12 +104,12 @@ public class LoginPage {
 	
 	
 	
-	public AirDoctorMemorialDayPage clickShopNow() throws InterruptedException{
+	public AirDoctorStagePage clickShopNow() throws InterruptedException{
 		//Thread.sleep(2000);
 		//driver.findElement(shadowroot).getShadowRoot().findElement(cookiebannerbtn).click();
 		Thread.sleep(2000);
 		eleUtil.clickWhenReady(shopNow, TimeUtil.DEFAULT_LONG_TIME);
-		return new AirDoctorMemorialDayPage(driver);
+		return new AirDoctorStagePage(driver);
 		
 	}
 	

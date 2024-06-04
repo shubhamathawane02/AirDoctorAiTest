@@ -96,7 +96,7 @@ public class Ad2500AffiliatePage {
 	private By shopNow = By
 			.xpath("//a[@href='https://airdoctorazstg.wpengine.com/purifiers/']//span[contains(text(),'shop now')]");
 	// a[@href='https://airdoctorazstg.wpengine.com/purifiers/']
-	private By bannerText = By.xpath("//strong[contains(text(),'NEW! AirDoctor 2500 Wall-Mounted Purifier Sale-on-')]");
+	private By bannerText = By.xpath("//*[@id=\"wrapper\"]/div[1]/div/div[1]/div/p");
 	// private By bannerText =By.xpath("//ul[contains(@class,'nav header-bottom-nav
 	// nav-center mobile-nav')]/li/p");
 	// private By Model2500Text =By.xpath("//h5[normalize-space()='\"WALL-MOUNTED OR
