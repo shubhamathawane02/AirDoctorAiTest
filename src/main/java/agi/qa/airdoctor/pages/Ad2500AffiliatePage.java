@@ -3,12 +3,15 @@ package agi.qa.airdoctor.pages;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.io.ByteArrayInputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -19,6 +22,8 @@ import agi.qa.airdoctor.utils.ElementUtil;
 import agi.qa.airdoctor.utils.ExcelUtil;
 import agi.qa.airdoctor.utils.JavaScriptUtil;
 import agi.qa.airdoctor.utils.TimeUtil;
+import io.qameta.allure.Allure;
+import io.qameta.allure.Step;
 
 public class Ad2500AffiliatePage {
 
@@ -97,6 +102,7 @@ public class Ad2500AffiliatePage {
 			.xpath("//a[@href='https://airdoctorazstg.wpengine.com/purifiers/']//span[contains(text(),'shop now')]");
 	// a[@href='https://airdoctorazstg.wpengine.com/purifiers/']
 	private By bannerText = By.xpath("//*[@id=\"wrapper\"]/div[1]/div/div[1]/div/p");
+	private By customaffiliatebannerText = By.xpath("//*[@id=\"wide-nav\"]/div/div[1]/ul/li/p");
 	// private By bannerText =By.xpath("//ul[contains(@class,'nav header-bottom-nav
 	// nav-center mobile-nav')]/li/p");
 	// private By Model2500Text =By.xpath("//h5[normalize-space()='\"WALL-MOUNTED OR
@@ -212,6 +218,17 @@ public class Ad2500AffiliatePage {
 		System.out.println("Landing page banner text : " + title);
 		return title;
 	}
+	
+	@Step("This is to validate the banner on landing page")
+	public String getCustomAffilateBannerText(String url){
+		Allure.addAttachment(url, new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+		eleUtil.waitForElementToBeClickable(customaffiliatebannerText, 5);
+		String title = eleUtil.doGetElementText(customaffiliatebannerText);
+		System.out.println("Landing page banner text : " + title);
+		 return title;
+	}
+	
+	
 
 	public void clickShopNow() {
 		eleUtil.doActionsClick(shopNow);

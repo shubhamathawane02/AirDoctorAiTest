@@ -91,7 +91,7 @@ public class AirDoctorStagePage {
 
 	// Buy AirDoctor 2000 And Receive $110 Off
 	private By buyAD2000increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_135592']//input[@value='+']");
-	private By buyAD2000UpgradeToIotCheckbox = By.xpath("//*[@id='wi-fi-connected135592']");
+	private By buyAD2000UpgradeToIotCheckbox = By.xpath("//*[@id='wi-fi-connected135600']");
 	//private By buyAD2000UpgradeToIotCheckbox = By.xpath("//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='135596']");
 	private By buyAD2000addToCart = By.xpath("//a[@id='iot_productaddtocart_135592']");
 
