@@ -17,99 +17,27 @@ import org.testng.asserts.SoftAssert;
 
 import agi.qa.airdoctor.base.BaseTest;
 import agi.qa.airdoctor.constants.AppConstants;
+import agi.qa.airdoctor.pages.AirDoctorOrderFlowPage;
+import agi.qa.airdoctor.pages.AirDoctorStagePage;
 import agi.qa.airdoctor.utils.SheetUtil;
+import agi.qa.airdoctor.utils.GeminiUtil;
 import org.openqa.selenium.By;
 
 import java.util.HashMap;
 
-public class AirDoctorOrderFlowTest extends BaseTest {
+public class AirDoctorOrderFlowTestGoogleSheet extends BaseTest {
 
 	Map<String, By> locatorMap = new HashMap<>();
+	private AirDoctorOrderFlowPage airDoctorOrderFlowPage;
+
 
 	@BeforeClass()
-	public void affilatePageSetup() throws InterruptedException {
-
+	public void affilatePageSetup() throws InterruptedException, IOException, GeneralSecurityException {
+		System.out.println("Calling gemini api for generating the data");
+		airDoctorOrderFlowPage = new AirDoctorOrderFlowPage(driver);
+		String prompt = "give me 27 fictional addresses in which each fields like street1, street2(important), city, state, and zip (total 5 fields are required) should be separated by a comma";
+		airDoctorOrderFlowPage.AddGeminiToGoogleSheet(prompt);
 	}
-
-	@DataProvider
-	// public Object[][] getDataFromSheet() throws IOException,
-	// GeneralSecurityException {
-	// // return ExcelUtil2.getTestData(AppConstants.STAGE_SHEET_NAME);
-	// // Object object[][] = ExcelUtil2.getTestData("xpaths");
-	// // List<List<Object>> values = SheetUtil.readSheet("xpaths");
-
-	// // System.out.println("Writing the sheet !");
-
-	// // for(List<Object> row: values){
-	// // String key = row.get(0).toString();
-	// // String xpath = row.get(1).toString();
-
-	// // By locator = By.xpath(xpath);
-	// // locatorMap.put(key, locator);
-	// // }
-
-	// // System.out.println("Reading the sheet 1");
-
-	// // for(List<Object> row: values){
-	// // System.out.println("Locator : " + row.get(0).toString() + " -> xpath : " +
-	// // row.get(1).toString());
-	// // }
-
-	// // // for (Object[] row : object) {
-	// // // for (Object data : row) {
-	// // // if (data != null) {
-	// // // String stringValue = data.toString();
-	// // // System.out.println(stringValue);
-	// // // }
-	// // // }
-	// // // }
-
-	// // System.out.println("Calling the click element method !");
-
-	// // clickElement("buyAD3500withAD5500increasequantitybtn");
-
-	// // return object;
-
-	// List<List<Object>> object = SheetUtil.readSheet("Testing");
-	// System.out.println("Reading the sheet!");
-
-	// int numRows = object.size();
-	// int numCols = object.get(0).size(); // Assuming all rows have the same number
-	// of columns
-
-	// Object[][] objectArray = new Object[numRows][numCols];
-
-	// for (int i = 0; i < numRows; i++) {
-	// List<Object> row = object.get(i);
-	// for (int j = 0; j < numCols; j++) {
-	// objectArray[i][j] = row.get(j).toString();
-	// }
-	// }
-
-	// // Optionally, you can print or process the objectArray here
-
-	// return objectArray;
-	// }
-
-	// public Object[][] getDataFromSheet() throws IOException, GeneralSecurityException {
-	// 	List<List<Object>> values = SheetUtil.readSheet("Testing");
-	// 	System.out.println("Reading the sheet!");
-
-	// 	Object[][] data = new Object[values.size()][values.get(0).size()];
-	// 	for (int i = 0; i < values.size(); i++) {
-	// 		for (int j = 0; j < values.get(i).size(); j++) {
-	// 			data[i][j] = values.get(i).get(j);
-	// 			System.out.println(data[i][j]);
-	// 		}
-	// 	}
-
-	// 	return data;
-	// }
-
-	public Object[][] getDataFromSheet() throws IOException, GeneralSecurityException {
-		return SheetUtil.readSheet("Testing");
-	}
-
 
 	private By getLocator(String key) {
 		return locatorMap.get(key);
@@ -119,6 +47,14 @@ public class AirDoctorOrderFlowTest extends BaseTest {
 		System.out.println(getLocator(key));
 	}
 
+	@DataProvider
+	public Object[][] getDataFromSheet() throws IOException, GeneralSecurityException {
+		System.out.println("Reading the sheet : " + AppConstants.GOOGLE_SHEET_NAME);
+		return SheetUtil.readSheet(AppConstants.GOOGLE_SHEET_NAME);
+	}
+
+	int count = 0;
+
 	@Test(dataProvider = "getDataFromSheet")
 	public void placeOrder(ITestContext testContext, String modelName, String productQuantity, String secondModel,
 			String secondModelQuantity, String email, String firstName, String lastName, String billingAddress1,
@@ -126,6 +62,7 @@ public class AirDoctorOrderFlowTest extends BaseTest {
 			String preUpsellSubtotalExp, String preUpsellShippingExp, String preUpsellTaxExp, String preUpsellTotalExp,
 			String preUpsellSubtotalAct, String preUpsellShippingAct, String preUpsellTaxAct, String preUpsellTotalAct,
 			String orderNumber) throws InterruptedException, Exception {
+
 		try {
 			airddoctorstg = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 			airddoctorstg.clearCart();
@@ -139,13 +76,9 @@ public class AirDoctorOrderFlowTest extends BaseTest {
 
 			Thread.sleep(5000);
 			airddoctorstg.checkout(email, firstName, lastName, billingAddress1, billingAddress2, city, state, zipCode,
-			phone);
+					phone);
 			String cartText = cartPage.getCartText();
 			System.out.println("Cart Text : " + cartText);
-				
-			
-	
-
 
 			Thread.sleep(15000);
 			// airddoctorstg.selectUpsell(upsell1);
@@ -178,6 +111,21 @@ public class AirDoctorOrderFlowTest extends BaseTest {
 			// productActDetailsMap.get("tax"), productActDetailsMap.get("total"),
 			// productActDetailsMap.get("OrderID"), currentTest);
 
+			count += 1;
+			try {
+				System.out.println("Calling write sheet data : ");
+				String sheetName = "Testing";
+				String subtotal = productActDetailsMap.get("subtotal");
+				String shipping = productActDetailsMap.get("Shipping");
+				String tax = productActDetailsMap.get("tax");
+				String total = productActDetailsMap.get("total");
+				String orderId = productActDetailsMap.get("OrderID");
+				SheetUtil.writeSheet(sheetName, subtotal, shipping, tax, total, orderId, currentTest);
+				System.out.println("Done with writing sheet data : ");
+			} catch (IOException | GeneralSecurityException e) {
+				e.printStackTrace();
+				System.out.println("Error here while writing the sheet!");
+			}
 			softAssert.assertAll();
 		} finally {
 			tearDown();

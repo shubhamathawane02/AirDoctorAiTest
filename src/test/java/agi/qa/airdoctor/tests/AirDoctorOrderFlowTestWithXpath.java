@@ -22,7 +22,7 @@ import org.openqa.selenium.By;
 
 import java.util.HashMap;
 
-public class AirDoctorOrderFlowTest extends BaseTest {
+public class AirDoctorOrderFlowTestWithXpath extends BaseTest {
 
 	Map<String, By> locatorMap = new HashMap<>();
 
@@ -32,84 +32,103 @@ public class AirDoctorOrderFlowTest extends BaseTest {
 	}
 
 	@DataProvider
-	// public Object[][] getDataFromSheet() throws IOException,
-	// GeneralSecurityException {
-	// // return ExcelUtil2.getTestData(AppConstants.STAGE_SHEET_NAME);
-	// // Object object[][] = ExcelUtil2.getTestData("xpaths");
-	// // List<List<Object>> values = SheetUtil.readSheet("xpaths");
+	public Object[][] getDataFromSheet() throws IOException, GeneralSecurityException {
 
-	// // System.out.println("Writing the sheet !");
+		// List<List<Object>> values = SheetUtil.readSheet("xpaths");
 
-	// // for(List<Object> row: values){
-	// // String key = row.get(0).toString();
-	// // String xpath = row.get(1).toString();
+		// for (List<Object> row : values) {
+		// String key = row.get(0).toString();
+		// String xpath = row.get(1).toString();
 
-	// // By locator = By.xpath(xpath);
-	// // locatorMap.put(key, locator);
-	// // }
+		// By locator = By.xpath(xpath);
+		// locatorMap.put(key, locator);
+		// }
 
-	// // System.out.println("Reading the sheet 1");
+		// System.out.println("Reading the sheet 1");
 
-	// // for(List<Object> row: values){
-	// // System.out.println("Locator : " + row.get(0).toString() + " -> xpath : " +
-	// // row.get(1).toString());
-	// // }
+		// for (List<Object> row : values) {
+		// System.out.println("Locator : " + row.get(0).toString() + " -> xpath : " +
+		// row.get(1).toString());
+		// }
 
-	// // // for (Object[] row : object) {
-	// // // for (Object data : row) {
-	// // // if (data != null) {
-	// // // String stringValue = data.toString();
-	// // // System.out.println(stringValue);
-	// // // }
-	// // // }
-	// // // }
+		// // for (Object[] row : object) {
+		// // for (Object data : row) {
+		// // if (data != null) {
+		// // String stringValue = data.toString();
+		// // System.out.println(stringValue);
+		// // }
+		// // }
+		// // }
 
-	// // System.out.println("Calling the click element method !");
+		// System.out.println("Calling the click element method !");
 
-	// // clickElement("buyAD3500withAD5500increasequantitybtn");
+		// clickElement("buyAD3500withAD5500increasequantitybtn");
 
-	// // return object;
+		// // List<List<Object>> object = SheetUtil.readSheet("Testing");
+		// List<List<Object>> object = SheetUtil.readSheet("xpaths");
+		// System.out.println("Reading the sheet!");
 
-	// List<List<Object>> object = SheetUtil.readSheet("Testing");
-	// System.out.println("Reading the sheet!");
+		// int numRows = object.size();
+		// int numCols = object.get(0).size(); // Assuming all rows have the same number
+		// of columns
 
-	// int numRows = object.size();
-	// int numCols = object.get(0).size(); // Assuming all rows have the same number
-	// of columns
+		// Object[][] objectArray = new Object[numRows][numCols];
 
-	// Object[][] objectArray = new Object[numRows][numCols];
+		// for (int i = 0; i < numRows; i++) {
+		// List<Object> row = object.get(i);
+		// for (int j = 0; j < numCols; j++) {
+		// objectArray[i][j] = row.get(j).toString();
+		// }
+		// }
+		// return objectArray;
 
-	// for (int i = 0; i < numRows; i++) {
-	// List<Object> row = object.get(i);
-	// for (int j = 0; j < numCols; j++) {
-	// objectArray[i][j] = row.get(j).toString();
-	// }
-	// }
+		// List<List<Object>> object = SheetUtil.readSheet("xpaths");
+		// System.out.println("Reading the sheet!");
+
+		// int numRows = object.size();
+		// int numCols = object.get(0).size(); // Assuming all rows have the same number
+		// of columns
+
+		Object[][] objectArray = SheetUtil.readSheet("xpaths");
+
+		for (Object[] row : objectArray) {
+			for (Object element : row) {
+				System.out.println(element);
+			}
+			System.out.println();
+		}
+		return objectArray;
+
+	}
 
 	// // Optionally, you can print or process the objectArray here
 
 	// return objectArray;
 	// }
 
-	// public Object[][] getDataFromSheet() throws IOException, GeneralSecurityException {
-	// 	List<List<Object>> values = SheetUtil.readSheet("Testing");
-	// 	System.out.println("Reading the sheet!");
+	// ======>
+	// llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
 
-	// 	Object[][] data = new Object[values.size()][values.get(0).size()];
-	// 	for (int i = 0; i < values.size(); i++) {
-	// 		for (int j = 0; j < values.get(i).size(); j++) {
-	// 			data[i][j] = values.get(i).get(j);
-	// 			System.out.println(data[i][j]);
-	// 		}
-	// 	}
+	//// =====> following function extract the data from google sheet api of
+	//// checkout page
 
-	// 	return data;
+	// public Object[][] getDataFromSheet() throws IOException,
+	// GeneralSecurityException {
+	// List<List<Object>> values = SheetUtil.readSheet("Testing");
+	// System.out.println("Reading the sheet!");
+
+	// Object[][] data = new Object[values.size()][values.get(0).size()];
+	// for (int i = 0; i < values.size(); i++) {
+	// for (int j = 0; j < values.get(i).size(); j++) {
+	// data[i][j] = values.get(i).get(j);
+	// // System.out.println(data[i][j]);
+	// }
 	// }
 
-	public Object[][] getDataFromSheet() throws IOException, GeneralSecurityException {
-		return SheetUtil.readSheet("Testing");
-	}
+	// return data;
+	// }
 
+	// =======> =========================> ================================>
 
 	private By getLocator(String key) {
 		return locatorMap.get(key);
@@ -139,13 +158,9 @@ public class AirDoctorOrderFlowTest extends BaseTest {
 
 			Thread.sleep(5000);
 			airddoctorstg.checkout(email, firstName, lastName, billingAddress1, billingAddress2, city, state, zipCode,
-			phone);
+					phone);
 			String cartText = cartPage.getCartText();
 			System.out.println("Cart Text : " + cartText);
-				
-			
-	
-
 
 			Thread.sleep(15000);
 			// airddoctorstg.selectUpsell(upsell1);

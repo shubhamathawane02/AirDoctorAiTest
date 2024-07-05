@@ -1,6 +1,7 @@
 package agi.qa.airdoctor.pages;
 
 import java.io.IOException;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.GeneralSecurityException;
@@ -9,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.mozilla.javascript.NativeGenerator.GeneratorClosedException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,20 +22,23 @@ import agi.qa.airdoctor.utils.ElementUtil;
 import agi.qa.airdoctor.utils.ExcelUtil;
 import agi.qa.airdoctor.utils.JavaScriptUtil;
 import agi.qa.airdoctor.utils.SheetUtil;
-import agi.qa.airdoctor.utils.GeminiUtil;
 import agi.qa.airdoctor.utils.TimeUtil;
 
-public class AirDoctorOrderFlowPage {
+public class AirDoctorOrderFlowPage2 {
+	
 
 	// Page class/Page Library/Page Object
 	private WebDriver driver;
 	private ElementUtil eleUtil;
 	private JavaScriptUtil JsUtil;
 	private Map<String, String> productMap = new HashMap<String, String>();
-	private Map<String, By> locatorMap = new HashMap<>();
+	private Map<String , By> locatorMap = new HashMap<>();
 
 	// 1. Private By Locators
-
+	
+	
+	
+	
 	// AD3500 locators
 	private By AD3500increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_135514']//input[@value='+']");
 	private By ad3500UpgradeToIotCheckbox = By.xpath(
@@ -185,32 +188,63 @@ public class AirDoctorOrderFlowPage {
 
 	// 2. Public Page Class Const...
 
-	public AirDoctorOrderFlowPage(WebDriver driver) throws IOException, GeneralSecurityException {
+	@DataProvider
+	public Object[][] getDataFromSheet(String SheetName) throws IOException, GeneralSecurityException {
+		List<List<Object>> values = SheetUtil.readSheet(SheetName);
+		System.out.println("Reading the sheet!");
+
+		Object[][] data = new Object[values.size()][values.get(0).size()];
+		for (int i = 0; i < values.size(); i++) {
+			for (int j = 0; j < values.get(i).size(); j++) {
+				data[i][j] = values.get(i).get(j);
+				// System.out.println(data[i][j]);
+			}
+		}
+
+		return data;
+	}
+	
+	public AirDoctorOrderFlowPage2(WebDriver driver) throws IOException, GeneralSecurityException {
 		this.driver = driver;
+		// initializerLocatorsFromSheet();
 		eleUtil = new ElementUtil(driver);
 		JsUtil = new JavaScriptUtil(driver);
 	}
-
-	// public void initializerLocatorsFromSheet() throws IOException,
-	// GeneralSecurityException{
-	// System.out.println("Reading the sheet !");
-	// try {
-	// List<List<Object>> values = SheetUtil.readSheet("xpaths");
-	// for(List<Object> row: values) {
-	// String key = row.get(0).toString();
-	// String xpath = row.get(1).toString();
-	// By locator = By.xpath(xpath);
-	// locatorMap.put(key, locator);
+	
+	
+	// private void initializerLocatorsFromSheet() throws IOException, GeneralSecurityException{
+	// 	System.out.println("Reading the sheet !");
+	// 	try {
+	// 		List<List<Object>> values = SheetUtil.readSheet("xpaths");
+	// 		for(List<Object> row: values) {
+	// 			String key = row.get(0).toString();
+	// 			String xpath = row.get(1).toString();
+	// 			By locator = By.xpath(xpath);
+	// 			locatorMap.put(key, locator);
+	// 		}
+			
+	// 		for(List<Object> row: values) {
+	// 			System.out.println("Locator : " + row.get(0).toString());
+	// 			System.out.println("Locator : " + row.get(1).toString());
+	// 		}
+	// 	}catch(Exception e){
+	// 		System.out.println(e);
+	// 	}
+		
 	// }
-
-	// for(List<Object> row:values){
-	// System.out.println(row.get(0) + " : xpath is : " + row.get(1).toString());
-	// }
-
-	// }catch(Exception e){
-	// System.out.println(e);
-	// }
-	// }
+	
+	private By getLocator(String key) {
+		return locatorMap.get(key);
+	}
+	
+	public void clickElement(String key) {
+		driver.findElement(getLocator(key)).click();
+	}
+	
+	
+	
+	
+	
 
 	public String getProductDisplayPageTitle() {
 		String title = eleUtil.waitForTitleIs(AppConstants.AD_AFFILIATE_PAGE_TITLE, 5);
@@ -230,9 +264,15 @@ public class AirDoctorOrderFlowPage {
 		return url;
 	}
 
-	public AirDoctorOrderFlowPage getaffiliateURL(String url) throws IOException, GeneralSecurityException {
+	public AirDoctorOrderFlowPage2 getaffiliateURL(String url) throws IOException, GeneralSecurityException {
 		driver.get(url);
-		return new AirDoctorOrderFlowPage(driver);
+		return new AirDoctorOrderFlowPage2(driver);
+	}
+	
+	
+	// usage example
+	public void addToCardAD3500() {
+		clickElement("AD3500addToCart");
 	}
 
 	public String getBannerText() {
@@ -260,67 +300,59 @@ public class AirDoctorOrderFlowPage {
 	public LoginPage removecartproducts() throws InterruptedException {
 		List<WebElement> productremovebuttonList = eleUtil.getElements(listOfProductsinCart);
 		try {
-
-			int i = productremovebuttonList.size();
-			for (i = 0; i < productremovebuttonList.size(); i++) {
-				eleUtil.clickWhenReady(listOfProductsinCart, TimeUtil.DEFAULT_MEDIUM_TIME);
-				driver.navigate().refresh();
-				Thread.sleep(10000);
-				// productremovebuttonList = eleUtil.getElements(listOfProductsinCart);
-			}
-
-			/*
-			 * for (WebElement e : productremovebuttonList) { String element = e.getText();
-			 * String attribute =e.getTagName(); if(productremovebuttonList.size()>=1)
-			 * e.click(); Thread.sleep(5000); driver.navigate().refresh();
-			 * Thread.sleep(5000); productremovebuttonList =
-			 * eleUtil.getElements(listOfProductsinCart); }
-			 */
-
+			
+		int i = productremovebuttonList.size();
+		for(i=0 ;i< productremovebuttonList.size();i++) {
+			eleUtil.clickWhenReady(listOfProductsinCart, TimeUtil.DEFAULT_MEDIUM_TIME);
+			driver.navigate().refresh();
+			Thread.sleep(10000);
+			//productremovebuttonList = eleUtil.getElements(listOfProductsinCart);
 		}
-
-		catch (Exception ex) {
-			System.out.println("Can not click on element" + ex);
+			
+		/*
+		 * for (WebElement e : productremovebuttonList) { String element = e.getText();
+		 * String attribute =e.getTagName(); if(productremovebuttonList.size()>=1)
+		 * e.click(); Thread.sleep(5000); driver.navigate().refresh();
+		 * Thread.sleep(5000); productremovebuttonList =
+		 * eleUtil.getElements(listOfProductsinCart); }
+		 */
+		
+		}
+		
+		    catch (Exception ex) {
+			System.out.println("Can not click on element"+ ex);
 			throw ex;
+			
 		}
 		eleUtil.clickWhenReady(backtohomepage, TimeUtil.DEFAULT_MEDIUM_TIME);
 		return new LoginPage(driver);
 	}
-
+	
 	public void clearCart() throws Exception {
 		Thread.sleep(10000);
 		getCartText();
-
+		eleUtil.getElement(AD3500increasequantitybtn);
+		
 		try {
 			if (!getCartText().equalsIgnoreCase("")) {
 				eleUtil.clickWhenReady(checkoutBtn, TimeUtil.DEFAULT_MEDIUM_TIME);
 				Thread.sleep(10000);
 				removecartproducts();
-			} else {
-				System.out.println("Cart is empty");
 			}
-		} catch (Exception ex) {
+			else {
+			System.out.println("Cart is empty");	
+			}
+		}
+		catch (Exception ex) {
 			System.out.println("Clearing Cart failed");
 			throw ex;
+			
 		}
 	}
-
-	// @DataProvider
-	// public Object[][] getDataFromSheet(String SheetName) throws IOException,
-	// GeneralSecurityException {
-	// List<List<Object>> values = SheetUtil.readSheet(SheetName);
-	// System.out.println("Reading the sheet!");
-
-	// Object[][] data = new Object[values.size()][values.get(0).size()];
-	// for (int i = 0; i < values.size(); i++) {
-	// for (int j = 0; j < values.get(i).size(); j++) {
-	// data[i][j] = values.get(i).get(j);
-	// // System.out.println(data[i][j]);
-	// }
-	// }
-
-	// return data;
-	// }
+		
+	
+	
+	
 
 	public Map<String, String> getorderdetails() throws InvalidFormatException, IOException {
 		productMap.put("subtotal", eleUtil.getElement(subtotalvalue).getText());
@@ -331,7 +363,7 @@ public class AirDoctorOrderFlowPage {
 		System.out.println("product Details: \n" + productMap);
 		return productMap;
 	}
-
+	
 	public void getThankYoPageURL() throws URISyntaxException {
 		String originalUrl = driver.getCurrentUrl();
 		String username = "airdoctorazstg";
@@ -355,17 +387,6 @@ public class AirDoctorOrderFlowPage {
 
 		// return url;
 	}
-
-
-	// calling GEMINI to generate data and store that data on google sheet 
-	public void AddGeminiToGoogleSheet(String prompt) throws IOException, GeneralSecurityException{
-		System.out.println("inside AddGeminiToGoogle Function with prompt : " + prompt);
-		String resp = GeminiUtil.getResponse(prompt);
-		System.out.println("Got the data , now filling data to Google Sheet");
-		List<String> addresses = GeminiUtil.extractMainContent(resp);
-		GeminiUtil.writeDataToGoogleSheet(AppConstants.GOOGLE_SHEET_NAME, addresses);
-	}
-	
 
 	public void checkout(String email, String firstname, String lastname, String addone, String addtwo, String cty,
 			String state, String zip, String phonenumber) throws InterruptedException, Exception {
@@ -411,8 +432,7 @@ public class AirDoctorOrderFlowPage {
 			}
 			if (ModelName.equalsIgnoreCase("AirDoctor 3500") && ProductQuantity.equals("2")) {
 
-				System.out.println(ModelName + " with quantity " + ProductQuantity);
-				;
+				System.out.println(ModelName + " with quantity " + ProductQuantity);;
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
 				eleUtil.doActionsClick(AD3500increasequantitybtn);
@@ -929,9 +949,9 @@ public class AirDoctorOrderFlowPage {
 
 	}
 
-	public void writeexcel(String subtotal, String flatrate, String tax, String total, String orderId, int count)
+	public void writeexcel(String subtotal, String flatrate, String tax, String total,String orderId, int count)
 			throws InvalidFormatException, IOException {
-		ExcelUtil.setdata(AppConstants.PRODUCT_SHEET_NAME, subtotal, flatrate, tax, total, orderId, count);
+		ExcelUtil.setdata(AppConstants.PRODUCT_SHEET_NAME, subtotal, flatrate, tax, total,orderId, count);
 	}
 
 	public int testMe(ITestContext testContext) {

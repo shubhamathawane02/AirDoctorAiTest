@@ -225,7 +225,6 @@ public class ElementUtil {
 				eleAttrList.add(attrValue);
 			}
 		}
-
 		return eleAttrList;
 
 	}

@@ -15,15 +15,19 @@ import agi.qa.airdoctor.factory.DriverFactory;
 import agi.qa.airdoctor.pages.Ad2500AffiliatePage;
 import agi.qa.airdoctor.pages.AirDoctorMemorialDayPage;
 import agi.qa.airdoctor.pages.AirDoctorStagePage;
+import agi.qa.airdoctor.pages.AirDoctorOrderFlowPage;
 import agi.qa.airdoctor.pages.LoginPage;
+import agi.qa.airdoctor.tests.DataExtractorFromCheckoutTest;
 import agi.qa.airdoctor.utils.ExcelUtil;
+import agi.qa.airdoctor.pages.HomePage;
+import agi.qa.airdoctor.pages.CartPage;
 
 
 
 
 public class BaseTest {
 	
-	WebDriver driver;
+	protected WebDriver driver;
 	protected Properties prop;
 	DriverFactory df;
 	
@@ -32,6 +36,10 @@ public class BaseTest {
 	protected AirDoctorMemorialDayPage memorialPage;
 	protected AirDoctorStagePage airddoctorstg;
 	protected SoftAssert softAssert;
+	protected HomePage homePage;
+    protected CartPage cartPage;
+    protected DataExtractorFromCheckoutTest DataExtractorFromCheckoutTest;
+    protected AirDoctorOrderFlowPage AirDoctorOrderFlowPage;
 	
 	//@Parameters({"browser"})
 	/*
@@ -51,9 +59,12 @@ public class BaseTest {
 		df = new DriverFactory();
 		prop = df.initProp();
 		driver = df.initDriver(prop);
-		//loginPage = new LoginPage(driver);
+		loginPage = new LoginPage(driver);
 		affiliatePage = new Ad2500AffiliatePage(driver);
-		//softAssert = new SoftAssert();
+		softAssert = new SoftAssert();
+		homePage = new HomePage(driver);
+		DataExtractorFromCheckoutTest = new DataExtractorFromCheckoutTest();
+		cartPage = new CartPage(driver);
 	}
 	
 	

@@ -3,6 +3,7 @@ package agi.qa.airdoctor.pages;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.security.GeneralSecurityException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,11 +14,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.ITestContext;
+import org.testng.annotations.DataProvider;
 
 import agi.qa.airdoctor.constants.AppConstants;
 import agi.qa.airdoctor.utils.ElementUtil;
 import agi.qa.airdoctor.utils.ExcelUtil;
 import agi.qa.airdoctor.utils.JavaScriptUtil;
+import agi.qa.airdoctor.utils.SheetUtil;
 import agi.qa.airdoctor.utils.TimeUtil;
 import io.qameta.allure.Step;
 
@@ -33,11 +36,12 @@ public class AirDoctorStagePage {
 	private By UpdradetoIotbtn = By.xpath("//a[text()='UPGRADE ME FOR $50']");
 	private By buyUpsell = By.xpath("//a[normalize-space()='Continue']");
 	private By cancelUpsell = By.xpath("//a[normalize-space()='No Thanks']");
-	
 
 	// AD3500 locators
 	private By AD3500increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_135514']//input[@value='+']");
-	//private By ad3500UpgradeToIotCheckbox = By.xpath("//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='135528']");
+	// private By ad3500UpgradeToIotCheckbox =
+	// By.xpath("//input[@name='upgrade_to_iot_chkbox' and
+	// preceding-sibling::input[@name='iot_variation_id']/@value='135528']");
 	private By ad3500UpgradeToIotCheckbox = By.xpath("//*[@id=\"wi-fi-connected135514\"]");
 	private By regularPrice = By.xpath(
 			"//*[@id='nu-custom-heading-title' and contains(text(), 'Buy AirDoctor 3500')]/following-sibling::div[contains(@class, 'main-price-wrapper')]/p[@class='earth_day_price']/span[contains(text(), 'Regular Price:')]/del/span/bdi");
@@ -76,23 +80,29 @@ public class AirDoctorStagePage {
 	// Buy AirDoctor 1000 And A One Year Filter Combo Pack!
 	private By buyAD1000withFilterincreasequantitybtn = By
 			.xpath("//div[@class='quantity buttons_added']/input[@id='p_quantity287023']/following-sibling::input[@value='+']");
-	private By buyAD1000withFilteraddToCart = By.xpath("//section[contains(@class,'product_section_287023')]//a[contains(@class,'button secondary btn-pri single_add_to_cart_button_sales')]");
-		
+	private By buyAD1000withFilteraddToCart = By.xpath(
+			"//section[contains(@class,'product_section_287023')]//a[contains(@class,'button secondary btn-pri single_add_to_cart_button_sales')]");
+
 	// Buy AirDoctor 1000!
 	private By buyAD1000increasequantitybtn = By
-				.xpath("//div[@class='quantity buttons_added']/input[@id='p_quantity451']/following-sibling::input[@value='+']");
-	private By buyAD1000addToCart = By.xpath("//section[contains(@class,'product_section_451')]//a[contains(@class,'button secondary btn-pri single_add_to_cart_button_sales')]");
-	
+			.xpath("//div[@class='quantity buttons_added']/input[@id='p_quantity451']/following-sibling::input[@value='+']");
+	private By buyAD1000addToCart = By.xpath(
+			"//section[contains(@class,'product_section_451')]//a[contains(@class,'button secondary btn-pri single_add_to_cart_button_sales')]");
+
 	// Buy AirDoctor 5500 And Receive $300 Off
 	private By buyAD5500increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_135600']//input[@value='+']");
 	private By buyAD5500UpgradeToIotCheckbox = By.xpath("//*[@id='wi-fi-connected135600']");
-	//private By buyAD5500UpgradeToIotCheckbox = By.xpath("//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='135604']");
+	// private By buyAD5500UpgradeToIotCheckbox =
+	// By.xpath("//input[@name='upgrade_to_iot_chkbox' and
+	// preceding-sibling::input[@name='iot_variation_id']/@value='135604']");
 	private By buyAD5500addToCart = By.xpath("//a[@id='iot_productaddtocart_135600']");
 
 	// Buy AirDoctor 2000 And Receive $110 Off
 	private By buyAD2000increasequantitybtn = By.xpath("//div[@id='iotproduct_varinfo_135592']//input[@value='+']");
 	private By buyAD2000UpgradeToIotCheckbox = By.xpath("//*[@id='wi-fi-connected135600']");
-	//private By buyAD2000UpgradeToIotCheckbox = By.xpath("//input[@name='upgrade_to_iot_chkbox' and preceding-sibling::input[@name='iot_variation_id']/@value='135596']");
+	// private By buyAD2000UpgradeToIotCheckbox =
+	// By.xpath("//input[@name='upgrade_to_iot_chkbox' and
+	// preceding-sibling::input[@name='iot_variation_id']/@value='135596']");
 	private By buyAD2000addToCart = By.xpath("//a[@id='iot_productaddtocart_135592']");
 
 	private By cartText = By.xpath("//button[@class='btn btn-checkout']//span[@id='prc']");
@@ -108,7 +118,7 @@ public class AirDoctorStagePage {
 
 	private By Model2500Text = By.xpath(
 			"//div[@class='product_text-inner-col mob-hide-heading' and not(contains(@style, 'display: none'))]/h3[1][contains(., 'AirDoctor 2500')]");
-	
+
 	private By checkoutBtn = By.xpath(
 			"//li[@class='html custom html_topbar_right']//a[@href='https://airdoctorazstg.wpengine.com/checkout/']");
 	private By firstName = By.id("billing_first_name");
@@ -147,6 +157,7 @@ public class AirDoctorStagePage {
 	private By deletebtn = By.xpath("//*[@id=\"main\"]/div[2]/div/div/div[2]/div/div/table/tbody/tr/td[6]/a[3]");
 
 	// 2. Public Page Class Const...
+
 	public AirDoctorStagePage(WebDriver driver) {
 		this.driver = driver;
 		eleUtil = new ElementUtil(driver);
@@ -184,7 +195,7 @@ public class AirDoctorStagePage {
 
 	@Step("Clicking on Shop Now button")
 	public void clickShopNow() {
-	eleUtil.doActionsClick(shopNow);
+		eleUtil.doActionsClick(shopNow);
 	}
 
 	public String getModelText() {
@@ -203,51 +214,45 @@ public class AirDoctorStagePage {
 	public LoginPage removecartproducts() throws InterruptedException {
 		List<WebElement> productremovebuttonList = eleUtil.getElements(listOfProductsinCart);
 		try {
-			
-		int i = productremovebuttonList.size();
-		for(i=0 ;i< productremovebuttonList.size();i++) {
-			eleUtil.clickWhenReady(listOfProductsinCart, TimeUtil.DEFAULT_MEDIUM_TIME);
-			driver.navigate().refresh();
-			Thread.sleep(10000);
+
+			int i = productremovebuttonList.size();
+			for (i = 0; i < productremovebuttonList.size(); i++) {
+				eleUtil.clickWhenReady(listOfProductsinCart, TimeUtil.DEFAULT_MEDIUM_TIME);
+				driver.navigate().refresh();
+				Thread.sleep(10000);
+			}
+
 		}
-			
-		
-		}
-		
-		    catch (Exception ex) {
-			System.out.println("Can not click on element"+ ex);
+
+		catch (Exception ex) {
+			System.out.println("Can not click on element" + ex);
 			throw ex;
-			
+
 		}
 		eleUtil.clickWhenReady(backtohomepage, TimeUtil.DEFAULT_MEDIUM_TIME);
 		return new LoginPage(driver);
 	}
-	
+
 	public void clearCart() throws Exception {
 		Thread.sleep(10000);
 		getCartText();
-		
+
 		try {
 			if (!getCartText().equalsIgnoreCase("")) {
 				eleUtil.clickWhenReady(checkoutBtn, TimeUtil.DEFAULT_MEDIUM_TIME);
 				Thread.sleep(10000);
 				removecartproducts();
+			} else {
+				System.out.println("Cart is empty");
 			}
-			else {
-			System.out.println("Cart is empty");	
-			}
-		}
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			System.out.println("Clearing Cart failed");
 			throw ex;
-			
+
 		}
 	}
-		
-	
-	
-	
-    @Step("Getting Subtotal,Tax,Shipping,Final Total and Order Numners from from Thank You Page")
+
+	@Step("Getting Subtotal,Tax,Shipping,Final Total and Order Numners from from Thank You Page")
 	public Map<String, String> getorderdetails() throws InvalidFormatException, IOException {
 		productMap.put("subtotal", eleUtil.getElement(subtotalvalue).getText());
 		productMap.put("tax", eleUtil.getElement(taxvalue).getText());
@@ -259,9 +264,8 @@ public class AirDoctorStagePage {
 	}
 
 	public void SelectUpsell(String Upsell1) throws InterruptedException {
-		
-		if(Upsell1.equalsIgnoreCase("Yes")&& eleUtil.isElementExist(UpdradetoIotbtn)) 
-		{
+
+		if (Upsell1.equalsIgnoreCase("Yes") && eleUtil.isElementExist(UpdradetoIotbtn)) {
 			Thread.sleep(5000);
 			System.out.println(eleUtil.doGetElementText(UpdradetoIotbtn));
 			System.out.println("Trying to Upgrade to iOT Upsell");
@@ -270,20 +274,19 @@ public class AirDoctorStagePage {
 			eleUtil.doActionsClick(buyUpsell);
 			System.out.println("Upgraded to iOT Upsell");
 			Thread.sleep(3000);
-	}
-		else if(Upsell1.equalsIgnoreCase("No")||Upsell1.equalsIgnoreCase("")&& eleUtil.isElementExist(UpdradetoIotbtn))  {
-	    	Thread.sleep(5000);
-	    	System.out.println("Trying to Cancel iOT Upsell");
-	    	eleUtil.doActionsClick(cancelUpsell);
-	    	System.out.println("Cancelled iOT Upsell ");
-	    	Thread.sleep(5000);
-	    	//eleUtil.clickWhenReady(cancelUpsell, TimeUtil.DEFAULT_LONG_TIME);
-			}
-		else {
+		} else if (Upsell1.equalsIgnoreCase("No")
+				|| Upsell1.equalsIgnoreCase("") && eleUtil.isElementExist(UpdradetoIotbtn)) {
+			Thread.sleep(5000);
+			System.out.println("Trying to Cancel iOT Upsell");
+			eleUtil.doActionsClick(cancelUpsell);
+			System.out.println("Cancelled iOT Upsell ");
+			Thread.sleep(5000);
+			// eleUtil.clickWhenReady(cancelUpsell, TimeUtil.DEFAULT_LONG_TIME);
+		} else {
 			System.out.println("Error While Selecting Upsell");
 			// Fail - Incorrect payment option
 		}
-		
+
 	}
 
 	public void getThankYoPageURL() throws URISyntaxException {
@@ -301,7 +304,7 @@ public class AirDoctorStagePage {
 			if (uri.getQuery() != null) {
 				newUrl += "?" + uri.getQuery();
 			}
-			//System.out.println("New URL: " + newUrl);
+			// System.out.println("New URL: " + newUrl);
 			driver.get(newUrl);
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
@@ -309,7 +312,8 @@ public class AirDoctorStagePage {
 
 		// return url;
 	}
-    @Step("Filling Billing and Payment Details")
+
+	@Step("Filling Billing and Payment Details")
 	public void checkout(String email, String firstname, String lastname, String addone, String addtwo, String cty,
 			String state, String zip, String phonenumber) throws InterruptedException, Exception {
 		eleUtil.doSendKeys(emailField, email);
@@ -342,12 +346,13 @@ public class AirDoctorStagePage {
 		eleUtil.clickWhenReady(popupdonebtn, TimeUtil.DEFAULT_MEDIUM_TIME);
 	}
 
-	
 	@Step("Selecting Model 1")
-	public void selectModel(String ModelName, String ProductQuantity,String ModeltwoName, String ProducttwoQuantity) throws InterruptedException, Exception {
+	public void selectModel(String ModelName, String ProductQuantity, String ModeltwoName, String ProducttwoQuantity)
+			throws InterruptedException, Exception {
 		try {
-			
-			if (ModelName.equalsIgnoreCase("AD3500")||ModelName.equalsIgnoreCase("AirDoctor 3500") && ProductQuantity.equals("1")) {
+
+			if (ModelName.equalsIgnoreCase("AD3500")
+					|| ModelName.equalsIgnoreCase("AirDoctor 3500") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(5000);
@@ -355,10 +360,10 @@ public class AirDoctorStagePage {
 				Thread.sleep(3000);
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
-			}
-			else if (ModelName.equalsIgnoreCase("AD3500") && ProductQuantity.equals("2")) {
+			} else if (ModelName.equalsIgnoreCase("AD3500") && ProductQuantity.equals("2")) {
 
-				System.out.println(ModelName + " with quantity " + ProductQuantity);;
+				System.out.println(ModelName + " with quantity " + ProductQuantity);
+				;
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
 				eleUtil.doActionsClick(AD3500increasequantitybtn);
@@ -368,8 +373,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD3500") && ProductQuantity.equals("3")) {
+			} else if (ModelName.equalsIgnoreCase("AD3500") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
@@ -385,8 +389,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD3500i") && ProductQuantity.equals("1")) {
+			} else if (ModelName.equalsIgnoreCase("AD3500i") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
@@ -412,8 +415,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD3500i") && ProductQuantity.equals("3")) {
+			} else if (ModelName.equalsIgnoreCase("AD3500i") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
@@ -431,8 +433,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD3500 with Filter") && ProductQuantity.equals("1")) {
+			} else if (ModelName.equalsIgnoreCase("AD3500 with Filter") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
 				Thread.sleep(5000);
@@ -440,8 +441,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(3000);
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
-			}
-			else if (ModelName.equalsIgnoreCase("AD3500 with Filter") && ProductQuantity.equals("2")) {
+			} else if (ModelName.equalsIgnoreCase("AD3500 with Filter") && ProductQuantity.equals("2")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
 				// JsUtil.scrollIntoView(eleUtil.getElement(buy2ad3500addToCart));
@@ -453,8 +453,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD3500 with Filter") && ProductQuantity.equals("3")) {
+			} else if (ModelName.equalsIgnoreCase("AD3500 with Filter") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
 				Thread.sleep(3000);
@@ -470,8 +469,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD3500i with Filter") && ProductQuantity.equals("1")) {
+			} else if (ModelName.equalsIgnoreCase("AD3500i with Filter") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
 				Thread.sleep(10000);
@@ -503,8 +501,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD3500i with Filter") && ProductQuantity.equals("3")) {
+			} else if (ModelName.equalsIgnoreCase("AD3500i with Filter") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
@@ -523,8 +520,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD5500 with Filter") && ProductQuantity.equals("1")) {
+			} else if (ModelName.equalsIgnoreCase("AD5500 with Filter") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
 				Thread.sleep(5000);
@@ -533,8 +529,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(3000);
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
-			}
-			else if (ModelName.equalsIgnoreCase("AD5500 with Filter") && ProductQuantity.equals("2")) {
+			} else if (ModelName.equalsIgnoreCase("AD5500 with Filter") && ProductQuantity.equals("2")) {
 
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
@@ -547,8 +542,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD5500 with Filter") && ProductQuantity.equals("3")) {
+			} else if (ModelName.equalsIgnoreCase("AD5500 with Filter") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
 				Thread.sleep(3000);
@@ -565,8 +559,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD5500i with Filter") && ProductQuantity.equals("1")) {
+			} else if (ModelName.equalsIgnoreCase("AD5500i with Filter") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
 				Thread.sleep(10000);
@@ -596,8 +589,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD5500i with Filter") && ProductQuantity.equals("3")) {
+			} else if (ModelName.equalsIgnoreCase("AD5500i with Filter") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
@@ -616,8 +608,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD2000 with Filter") && ProductQuantity.equals("1")) {
+			} else if (ModelName.equalsIgnoreCase("AD2000 with Filter") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
 				Thread.sleep(5000);
@@ -626,8 +617,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(3000);
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
-			}
-			else if (ModelName.equalsIgnoreCase("AD2000 with Filter") && ProductQuantity.equals("2")) {
+			} else if (ModelName.equalsIgnoreCase("AD2000 with Filter") && ProductQuantity.equals("2")) {
 
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
@@ -640,8 +630,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD2000 with Filter") && ProductQuantity.equals("3")) {
+			} else if (ModelName.equalsIgnoreCase("AD2000 with Filter") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
 				Thread.sleep(3000);
@@ -658,8 +647,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD2000i with Filter") && ProductQuantity.equals("1")) {
+			} else if (ModelName.equalsIgnoreCase("AD2000i with Filter") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
 				Thread.sleep(10000);
@@ -689,8 +677,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD2000i with Filter") && ProductQuantity.equals("3")) {
+			} else if (ModelName.equalsIgnoreCase("AD2000i with Filter") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
@@ -710,8 +697,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD5500") && ProductQuantity.equals("1")) {
+			} else if (ModelName.equalsIgnoreCase("AD5500") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
 				Thread.sleep(5000);
@@ -719,8 +705,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				Thread.sleep(3000);
 				eleUtil.doActionsClick(checkoutBtn);
-			}
-			else if (ModelName.equalsIgnoreCase("AD5500") && ProductQuantity.equals("2")) {
+			} else if (ModelName.equalsIgnoreCase("AD5500") && ProductQuantity.equals("2")) {
 
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
@@ -733,8 +718,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD5500") && ProductQuantity.equals("3")) {
+			} else if (ModelName.equalsIgnoreCase("AD5500") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
 				Thread.sleep(3000);
@@ -751,8 +735,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD5500i") && ProductQuantity.equals("1")) {
+			} else if (ModelName.equalsIgnoreCase("AD5500i") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
 				Thread.sleep(10000);
@@ -780,8 +763,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD5500i") && ProductQuantity.equals("3")) {
+			} else if (ModelName.equalsIgnoreCase("AD5500i") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
@@ -801,8 +783,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD2000") && ProductQuantity.equals("1")) {
+			} else if (ModelName.equalsIgnoreCase("AD2000") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
 				Thread.sleep(5000);
@@ -811,8 +792,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(3000);
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
-			}
-			else if (ModelName.equalsIgnoreCase("AD2000") && ProductQuantity.equals("2")) {
+			} else if (ModelName.equalsIgnoreCase("AD2000") && ProductQuantity.equals("2")) {
 
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
@@ -825,8 +805,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD2000") && ProductQuantity.equals("3")) {
+			} else if (ModelName.equalsIgnoreCase("AD2000") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
 				Thread.sleep(3000);
@@ -843,8 +822,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD2000i") && ProductQuantity.equals("1")) {
+			} else if (ModelName.equalsIgnoreCase("AD2000i") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
 				Thread.sleep(10000);
@@ -872,8 +850,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD2000i") && ProductQuantity.equals("3")) {
+			} else if (ModelName.equalsIgnoreCase("AD2000i") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
@@ -893,8 +870,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD1000") && ProductQuantity.equals("1")) {
+			} else if (ModelName.equalsIgnoreCase("AD1000") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD1000increasequantitybtn);
 				Thread.sleep(5000);
@@ -903,8 +879,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(3000);
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
-			}
-			else if (ModelName.equalsIgnoreCase("AD1000") && ProductQuantity.equals("2")) {
+			} else if (ModelName.equalsIgnoreCase("AD1000") && ProductQuantity.equals("2")) {
 
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD1000increasequantitybtn);
@@ -917,8 +892,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD1000") && ProductQuantity.equals("3")) {
+			} else if (ModelName.equalsIgnoreCase("AD1000") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD1000increasequantitybtn);
 				Thread.sleep(3000);
@@ -935,8 +909,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(checkoutBtn);
 				System.out.println("Clicked on CheckOut");
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD1000 with Filter") && ProductQuantity.equals("1")) {
+			} else if (ModelName.equalsIgnoreCase("AD1000 with Filter") && ProductQuantity.equals("1")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD1000withFilterincreasequantitybtn);
 				Thread.sleep(5000);
@@ -945,8 +918,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(3000);
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
-			}
-			else if (ModelName.equalsIgnoreCase("AD1000 with Filter") && ProductQuantity.equals("2")) {
+			} else if (ModelName.equalsIgnoreCase("AD1000 with Filter") && ProductQuantity.equals("2")) {
 
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD1000withFilterincreasequantitybtn);
@@ -959,8 +931,7 @@ public class AirDoctorStagePage {
 				selectSecondModel(ModeltwoName, ProducttwoQuantity);
 				eleUtil.doActionsClick(checkoutBtn);
 				Thread.sleep(4000);
-			}
-			else if (ModelName.equalsIgnoreCase("AD1000 with Filter") && ProductQuantity.equals("3")) {
+			} else if (ModelName.equalsIgnoreCase("AD1000 with Filter") && ProductQuantity.equals("3")) {
 				System.out.println(ModelName + " with quantity " + ProductQuantity);
 				eleUtil.scrollTiView(buyAD1000withFilterincreasequantitybtn);
 				Thread.sleep(3000);
@@ -992,11 +963,11 @@ public class AirDoctorStagePage {
 		}
 
 	}
-    
+
 	@Step("Entering Values in Excel sheet for Subtotal,Shipping,Tax and Overall Total")
-	public void writeexcel(String subtotal, String flatrate, String tax, String total,String orderId, int count)
+	public void writeexcel(String subtotal, String flatrate, String tax, String total, String orderId, int count)
 			throws InvalidFormatException, IOException {
-		ExcelUtil.setdata(AppConstants.STAGE_SHEET_NAME, subtotal, flatrate, tax, total,orderId, count);
+		ExcelUtil.setdata(AppConstants.STAGE_SHEET_NAME, subtotal, flatrate, tax, total, orderId, count);
 	}
 
 	public int testMe(ITestContext testContext) {
@@ -1014,30 +985,31 @@ public class AirDoctorStagePage {
 		eleUtil.clickWhenReady(backtohomepage, TimeUtil.DEFAULT_MEDIUM_TIME);
 		return new LoginPage(driver);
 	}
-    
+
 	@Step("Selecting second model")
-	public void selectSecondModel(String ModeltwoName, String ProducttwoQuantity) throws InterruptedException, Exception {
+	public void selectSecondModel(String ModeltwoName, String ProducttwoQuantity)
+			throws InterruptedException, Exception {
 		try {
-			if (ModeltwoName.equalsIgnoreCase("AD3500")||ModeltwoName.equalsIgnoreCase("AirDoctor 3500") && ProducttwoQuantity.equals("1")) {
+			if (ModeltwoName.equalsIgnoreCase("AD3500")
+					|| ModeltwoName.equalsIgnoreCase("AirDoctor 3500") && ProducttwoQuantity.equals("1")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(ad3500addToCart);
 				Thread.sleep(3000);
-				
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD3500") && ProducttwoQuantity.equals("2")) {
 
-				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);;
+			} else if (ModeltwoName.equalsIgnoreCase("AD3500") && ProducttwoQuantity.equals("2")) {
+
+				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
+				;
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
 				eleUtil.doActionsClick(AD3500increasequantitybtn);
 				Thread.sleep(3000);
 				eleUtil.doActionsClick(ad3500addToCart);
 				Thread.sleep(4000);
-				
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD3500") && ProducttwoQuantity.equals("3")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD3500") && ProducttwoQuantity.equals("3")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
@@ -1050,8 +1022,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD3500i") && ProducttwoQuantity.equals("1")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD3500i") && ProducttwoQuantity.equals("1")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
@@ -1060,7 +1031,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(ad3500addToCart);
 				Thread.sleep(3000);
-				
+
 			}
 
 			else if (ModeltwoName.equalsIgnoreCase("AD3500i") && ProducttwoQuantity.equals("2")) {
@@ -1073,9 +1044,8 @@ public class AirDoctorStagePage {
 				Thread.sleep(3000);
 				eleUtil.doActionsClick(ad3500addToCart);
 				Thread.sleep(4000);
-				
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD3500i") && ProducttwoQuantity.equals("3")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD3500i") && ProducttwoQuantity.equals("3")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(AD3500increasequantitybtn);
 				Thread.sleep(3000);
@@ -1090,16 +1060,14 @@ public class AirDoctorStagePage {
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD3500 with Filter") && ProducttwoQuantity.equals("1")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD3500 with Filter") && ProducttwoQuantity.equals("1")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(buy2ad3500addToCart);
 				Thread.sleep(3000);
-			
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD3500 with Filter") && ProducttwoQuantity.equals("2")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD3500 with Filter") && ProducttwoQuantity.equals("2")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
 				// JsUtil.scrollIntoView(eleUtil.getElement(buy2ad3500addToCart));
@@ -1108,8 +1076,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(3000);
 				eleUtil.doActionsClick(buy2ad3500addToCart);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD3500 with Filter") && ProducttwoQuantity.equals("3")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD3500 with Filter") && ProducttwoQuantity.equals("3")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
 				Thread.sleep(3000);
@@ -1122,8 +1089,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD3500i with Filter") && ProducttwoQuantity.equals("1")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD3500i with Filter") && ProducttwoQuantity.equals("1")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
 				Thread.sleep(10000);
@@ -1136,7 +1102,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buy2ad3500addToCart);
 				eleUtil.doActionsClick(buy2ad3500addToCart);
 				Thread.sleep(6000);
-				
+
 			}
 
 			else if (ModeltwoName.equalsIgnoreCase("AD3500i with Filter") && ProducttwoQuantity.equals("2")) {
@@ -1151,9 +1117,8 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buy2ad3500addToCart);
 				eleUtil.doActionsClick(buy2ad3500addToCart);
 				Thread.sleep(4000);
-				
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD3500i with Filter") && ProducttwoQuantity.equals("3")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD3500i with Filter") && ProducttwoQuantity.equals("3")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buy2AD3500increasequantitybtn);
@@ -1169,17 +1134,15 @@ public class AirDoctorStagePage {
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD5500 with Filter") && ProducttwoQuantity.equals("1")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD5500 with Filter") && ProducttwoQuantity.equals("1")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				Thread.sleep(3000);
-			
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD5500 with Filter") && ProducttwoQuantity.equals("2")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD5500 with Filter") && ProducttwoQuantity.equals("2")) {
 
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
@@ -1189,8 +1152,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD5500 with Filter") && ProducttwoQuantity.equals("3")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD5500 with Filter") && ProducttwoQuantity.equals("3")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
 				Thread.sleep(3000);
@@ -1204,8 +1166,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD5500i with Filter") && ProducttwoQuantity.equals("1")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD5500i with Filter") && ProducttwoQuantity.equals("1")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
 				Thread.sleep(10000);
@@ -1216,7 +1177,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				Thread.sleep(6000);
-				
+
 			}
 
 			else if (ModeltwoName.equalsIgnoreCase("AD5500i with Filter") && ProducttwoQuantity.equals("2")) {
@@ -1231,9 +1192,8 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD5500addToCart);
 				Thread.sleep(4000);
-			
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD5500i with Filter") && ProducttwoQuantity.equals("3")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD5500i with Filter") && ProducttwoQuantity.equals("3")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
@@ -1249,17 +1209,15 @@ public class AirDoctorStagePage {
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD2000 with Filter") && ProducttwoQuantity.equals("1")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD2000 with Filter") && ProducttwoQuantity.equals("1")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD5500increasequantitybtn);
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				Thread.sleep(3000);
-			
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD2000 with Filter") && ProducttwoQuantity.equals("2")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD2000 with Filter") && ProducttwoQuantity.equals("2")) {
 
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
@@ -1269,9 +1227,8 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				Thread.sleep(4000);
-				
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD2000 with Filter") && ProducttwoQuantity.equals("3")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD2000 with Filter") && ProducttwoQuantity.equals("3")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
 				Thread.sleep(3000);
@@ -1285,8 +1242,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD2000i with Filter") && ProducttwoQuantity.equals("1")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD2000i with Filter") && ProducttwoQuantity.equals("1")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
 				Thread.sleep(10000);
@@ -1297,7 +1253,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				Thread.sleep(6000);
-				
+
 			}
 
 			else if (ModeltwoName.equalsIgnoreCase("AD2000i with Filter") && ProducttwoQuantity.equals("2")) {
@@ -1312,8 +1268,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				eleUtil.doActionsClick(buyAD3500withAD2000addToCart);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD2000i with Filter") && ProducttwoQuantity.equals("3")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD2000i with Filter") && ProducttwoQuantity.equals("3")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buyAD3500withAD2000increasequantitybtn);
@@ -1330,17 +1285,15 @@ public class AirDoctorStagePage {
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD5500") && ProducttwoQuantity.equals("1")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD5500") && ProducttwoQuantity.equals("1")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				Thread.sleep(3000);
-			
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD5500") && ProducttwoQuantity.equals("2")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD5500") && ProducttwoQuantity.equals("2")) {
 
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
@@ -1350,9 +1303,8 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				Thread.sleep(4000);
-			
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD5500") && ProducttwoQuantity.equals("3")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD5500") && ProducttwoQuantity.equals("3")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
 				Thread.sleep(3000);
@@ -1366,8 +1318,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD5500i") && ProducttwoQuantity.equals("1")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD5500i") && ProducttwoQuantity.equals("1")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
 				Thread.sleep(10000);
@@ -1376,7 +1327,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				Thread.sleep(6000);
-				
+
 			}
 
 			else if (ModeltwoName.equalsIgnoreCase("AD5500i") && ProducttwoQuantity.equals("2")) {
@@ -1391,9 +1342,8 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				eleUtil.doActionsClick(buyAD5500addToCart);
 				Thread.sleep(4000);
-				
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD5500i") && ProducttwoQuantity.equals("3")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD5500i") && ProducttwoQuantity.equals("3")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buyAD5500increasequantitybtn);
@@ -1410,17 +1360,15 @@ public class AirDoctorStagePage {
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD2000") && ProducttwoQuantity.equals("1")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD2000") && ProducttwoQuantity.equals("1")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				Thread.sleep(3000);
-		
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD2000") && ProducttwoQuantity.equals("2")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD2000") && ProducttwoQuantity.equals("2")) {
 
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
@@ -1430,9 +1378,8 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				Thread.sleep(4000);
-				
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD2000") && ProducttwoQuantity.equals("3")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD2000") && ProducttwoQuantity.equals("3")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
 				Thread.sleep(3000);
@@ -1446,8 +1393,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD2000i") && ProducttwoQuantity.equals("1")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD2000i") && ProducttwoQuantity.equals("1")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
 				Thread.sleep(10000);
@@ -1455,7 +1401,7 @@ public class AirDoctorStagePage {
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				eleUtil.doActionsClick(buyAD2000addToCart);
-				
+
 			}
 
 			else if (ModeltwoName.equalsIgnoreCase("AD2000i") && ProducttwoQuantity.equals("2")) {
@@ -1470,8 +1416,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				eleUtil.doActionsClick(buyAD2000addToCart);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD2000i") && ProducttwoQuantity.equals("3")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD2000i") && ProducttwoQuantity.equals("3")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				Thread.sleep(6000);
 				eleUtil.scrollTiView(buyAD2000increasequantitybtn);
@@ -1488,17 +1433,15 @@ public class AirDoctorStagePage {
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD1000") && ProducttwoQuantity.equals("1")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD1000") && ProducttwoQuantity.equals("1")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD1000increasequantitybtn);
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(buyAD1000addToCart);
 				eleUtil.doActionsClick(buyAD1000addToCart);
 				Thread.sleep(3000);
-				
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD1000") && ProducttwoQuantity.equals("2")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD1000") && ProducttwoQuantity.equals("2")) {
 
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD1000increasequantitybtn);
@@ -1508,8 +1451,7 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buyAD1000addToCart);
 				eleUtil.doActionsClick(buyAD1000addToCart);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD1000") && ProducttwoQuantity.equals("3")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD1000") && ProducttwoQuantity.equals("3")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD1000increasequantitybtn);
 				Thread.sleep(3000);
@@ -1523,17 +1465,15 @@ public class AirDoctorStagePage {
 				Thread.sleep(2000);
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				Thread.sleep(4000);
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD1000 with Filter") && ProducttwoQuantity.equals("1")) {
+			} else if (ModeltwoName.equalsIgnoreCase("AD1000 with Filter") && ProducttwoQuantity.equals("1")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD1000withFilterincreasequantitybtn);
 				Thread.sleep(5000);
 				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
 				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
 				Thread.sleep(3000);
-			
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD1000 with Filter") && ProducttwoQuantity.equals("2")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD1000 with Filter") && ProducttwoQuantity.equals("2")) {
 
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD1000withFilterincreasequantitybtn);
@@ -1543,9 +1483,8 @@ public class AirDoctorStagePage {
 				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
 				eleUtil.doActionsClick(buyAD1000withFilteraddToCart);
 				Thread.sleep(4000);
-				
-			}
-			else if (ModeltwoName.equalsIgnoreCase("AD1000 with Filter") && ProducttwoQuantity.equals("3")) {
+
+			} else if (ModeltwoName.equalsIgnoreCase("AD1000 with Filter") && ProducttwoQuantity.equals("3")) {
 				System.out.println(ModeltwoName + " with quantity " + ProducttwoQuantity);
 				eleUtil.scrollTiView(buyAD1000withFilterincreasequantitybtn);
 				Thread.sleep(3000);
@@ -1560,7 +1499,6 @@ public class AirDoctorStagePage {
 				eleUtil.waitForElementPresence(checkoutBtn, TimeUtil.DEFAULT_LONG_TIME);
 				Thread.sleep(4000);
 			}
-
 
 			else {
 				System.out.println("Incorrect or No Second Model Selected");
@@ -1574,6 +1512,5 @@ public class AirDoctorStagePage {
 		}
 
 	}
-	
-	
+
 }
