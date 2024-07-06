@@ -30,12 +30,11 @@ public class AirDoctorOrderFlowTestGoogleSheet extends BaseTest {
 	Map<String, By> locatorMap = new HashMap<>();
 	private AirDoctorOrderFlowPage airDoctorOrderFlowPage;
 
-
 	@BeforeClass()
 	public void affilatePageSetup() throws InterruptedException, IOException, GeneralSecurityException {
 		System.out.println("Calling gemini api for generating the data");
 		airDoctorOrderFlowPage = new AirDoctorOrderFlowPage(driver);
-		String prompt = "give me 27 fictional addresses in which each fields like street1, street2(important), city, state, and zip (total 5 fields are required) should be separated by a comma";
+		String prompt = "give me 28 fictional addresses in which each fields  street1, street2,  city state and zip (total 5 fields) should be separated by comma  and it should contains following states : Alabama Alaska Arizona Arkansas California Colorado Connecticut Delaware District Columbia Florida Georgia Hawaii Idaho Illinois Indiana Iowa Kansas Kentucky Louisiana Maine Maryland Massachusetts Michigan Minnesota Mississippi Missouri Montana Nebraska Nevada New Hampshire New Jersey New Mexico New York North Carolina North Dakota Ohio Oklahoma Oregon Pennsylvania Rhode South Carolina South Dakota Tennessee Texas Utah Vermont Virginia Washington West Virginia Wisconsin Wyoming in json format";
 		airDoctorOrderFlowPage.AddGeminiToGoogleSheet(prompt);
 	}
 

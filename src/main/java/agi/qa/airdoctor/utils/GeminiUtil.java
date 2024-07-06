@@ -1,9 +1,11 @@
 package agi.qa.airdoctor.utils;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import com.google.api.services.sheets.v4.Sheets;
+import com.google.api.services.sheets.v4.model.ValueRange;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.GeneralSecurityException;
@@ -12,17 +14,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import com.google.api.services.sheets.v4.Sheets;
-import com.google.api.services.sheets.v4.model.ValueRange;
-
 import agi.qa.airdoctor.constants.AppConstants;
 
 public class GeminiUtil {
 
-    public static String prompt = "give me 27 fictional addresses in which each fields like street1, street2, city, state, and zip (total 5 fields) should be separated by a comma";
+    public static String prompt = "give me 15 fictional addresses in which each fields  street1, street2,  city state and zip (total 5 fields) should be separated by comma  and it should contains following states : Alabama Alaska Arizona Arkansas California Colorado Connecticut Delaware District Columbia Florida Georgia Hawaii Idaho Illinois Indiana Iowa Kansas Kentucky Louisiana Maine Maryland Massachusetts Michigan Minnesota Mississippi Missouri Montana Nebraska Nevada New Hampshire New Jersey New Mexico New York North Carolina North Dakota Ohio Oklahoma Oregon Pennsylvania Rhode South Carolina South Dakota Tennessee Texas Utah Vermont Virginia Washington West Virginia Wisconsin Wyoming in json format";
 
     public static String getResponse(String prompt) {
         String jsonString = "{\"contents\":[" +
@@ -30,7 +26,6 @@ public class GeminiUtil {
                 "\"parts\":[{\"text\": \"" + prompt + "\"}]}]}";
 
         try {
-            @SuppressWarnings("deprecation")
             URL url = new URL(AppConstants.GEMINI_API_URL);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
@@ -51,7 +46,10 @@ public class GeminiUtil {
                     response.append(line.trim());
                 }
                 reader.close();
-                return response.toString();
+                String resp = response.toString();
+                System.out.println("Returning gemini response...");
+                String jsonResponse = resp.replace("```json", "").replace("```", "").trim();
+                return "[" + jsonResponse + "]";
             } else {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getErrorStream(), "utf-8"));
                 StringBuilder response = new StringBuilder();
@@ -64,73 +62,112 @@ public class GeminiUtil {
                 return null;
             }
 
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    public static List<String> extractMainContent(String response) {
-        List<String> addresses = new ArrayList<>();
-        JSONObject jsonResponse = new JSONObject(response);
-        JSONArray candidates = jsonResponse.getJSONArray("candidates");
-        if (candidates.length() > 0) {
-            JSONObject candidate = candidates.getJSONObject(0);
-            JSONObject content = candidate.getJSONObject("content");
-            JSONArray parts = content.getJSONArray("parts");
-            if (parts.length() > 0) {
-                JSONObject part = parts.getJSONObject(0);
-                String text = part.getString("text");
-                String[] lines = text.split("\n");
-                for (String line : lines) {
-                    addresses.add(line);
+    public static void writeDataToGoogleSheet(String sheetName, String jsonResponse)
+            throws IOException, GeneralSecurityException {
+        Sheets service = SheetUtil.getSheetsService(); // Ensure you have this utility method
+
+        JSONArray responseArray = new JSONArray(jsonResponse);
+
+        // Ensure the structure matches expectations
+        if (responseArray.length() > 0) {
+            JSONObject mainObject = responseArray.getJSONObject(0); // Assuming there's only one main object
+
+            JSONArray candidates = mainObject.getJSONArray("candidates");
+
+            List<List<Object>> headerData = getSheetData(service, AppConstants.GOOGLE_SPREADSHEET_ID,
+                    sheetName + "!1:1");
+
+            // First row
+            if (headerData.isEmpty() || headerData.get(0).isEmpty()) {
+                throw new IllegalArgumentException("No headers found in the first row of the sheet.");
+            }
+
+            Map<String, Integer> columnIndexMap = getColumnIndexMap(headerData.get(0));
+
+            List<List<Object>> data = new ArrayList<>();
+            int currentRowNum = 1; // Start from the next available row
+
+            for (int i = 0; i < candidates.length(); i++) {
+                JSONObject candidate = candidates.getJSONObject(i);
+
+                JSONObject content = candidate.getJSONObject("content");
+                JSONArray parts = content.getJSONArray("parts");
+                if (parts.length() > 0) {
+                    JSONObject part = parts.getJSONObject(0);
+                    String text = part.getString("text");
+
+                    JSONArray addresses = new JSONArray(text);
+                    for (int j = 0; j < addresses.length(); j++) {
+                        JSONObject address = addresses.getJSONObject(j);
+
+                        // Extract address details
+                        String street1 = address.getString("street1");
+                        String street2 = address.optString("street2", "");
+                        String city = address.getString("city");
+                        String state = address.getString("state");
+                        String zip = address.getString("zip");
+
+                        // Assuming your headers in the sheet are "Billing_Address_1",
+                        // "Billing_Address_2", "City",
+                        // "State", "zipcode"
+                        List<Object> row = new ArrayList<>();
+                        row.add(street1);
+                        row.add(street2);
+                        row.add(city);
+                        row.add(state);
+                        row.add(zip);
+
+                        data.add(row);
+                        currentRowNum++;
+                    }
                 }
             }
+            writeToGoogleSheets(service, AppConstants.GOOGLE_SPREADSHEET_ID, sheetName + "!H2", data);
         }
-        return addresses;
     }
 
-    public static void writeDataToGoogleSheet(String sheetName, List<String> addresses)
-            throws IOException, GeneralSecurityException {
-        // Map to store column index based on header name
+    private static Map<String, Integer> getColumnIndexMap(List<Object> headerRow) {
         Map<String, Integer> columnIndexMap = new HashMap<>();
-
-        Sheets service = SheetUtil.getSheetsService();
-
-        List<List<Object>> headerData = getSheetData(service, AppConstants.GOOGLE_SPREADSHEET_ID, sheetName + "!1:1");
-
-        // first row
-        if (headerData.isEmpty() || headerData.get(0).isEmpty()) {
-            throw new IllegalArgumentException("No headers found in the first row of the sheet.");
-        }
-
-        List<Object> headerRow = headerData.get(0);
         for (int colNum = 0; colNum < headerRow.size(); colNum++) {
-            String header = headerRow.get(colNum).toString().trim(); 
+            String header = headerRow.get(colNum).toString().trim();
             columnIndexMap.put(header, colNum);
         }
+        return columnIndexMap;
+    }
 
+    private static List<List<Object>> extractDataFromJson(String jsonResponse) {
+        System.out.println("Extracting the content...!");
         List<List<Object>> data = new ArrayList<>();
-        int currentRowNum = 1; // Start from the next available row
-        for (String address : addresses) {
-            String addressWithoutNumbering = address.replaceFirst("^\\d+\\.\\s*", "");
-            String[] parts = addressWithoutNumbering.split("\\s*,\\s*"); // Split by comma and trim whitespace
-            List<Object> row = new ArrayList<>();
-            for (int i = 0; i < parts.length; i++) {
-                String header = getHeader(i); // Get header based on index
-                if (columnIndexMap.containsKey(header)) {
-                    row.add(parts[i].trim()); // Trim to remove extra spaces
-                }
-            }
-            data.add(row);
-            currentRowNum++; 
-        }
+        JSONArray candidates = new JSONArray(jsonResponse);
+        for (int i = 0; i < candidates.length(); i++) {
+            JSONObject candidate = candidates.getJSONObject(i);
+            String street1 = candidate.getString("street1");
+            String street2 = candidate.optString("street2", "");
+            String city = candidate.getString("city");
+            String state = candidate.getString("state");
+            String zip = candidate.getString("zip");
 
-        writeToGoogleSheets(service, AppConstants.GOOGLE_SPREADSHEET_ID, sheetName + "!H2", data);
+            List<Object> row = new ArrayList<>();
+            row.add(street1);
+            row.add(street2);
+            row.add(city);
+            row.add(state);
+            row.add(zip);
+
+            data.add(row);
+        }
+        return data;
     }
 
     private static void writeToGoogleSheets(Sheets service, String spreadsheetId, String range, List<List<Object>> data)
             throws IOException {
+        System.out.println("Writing data to sheet..!");
         ValueRange body = new ValueRange().setValues(data);
         service.spreadsheets().values()
                 .append(spreadsheetId, range, body)
@@ -145,31 +182,14 @@ public class GeminiUtil {
         return response.getValues();
     }
 
-    private static String getHeader(int index) {
-        switch (index) {
-            case 0:
-                return "Billing_Address_1";
-            case 1:
-                return "Billing_Address_2";
-            case 2:
-                return "City";
-            case 3:
-                return "State";
-            case 4:
-                return "zipcode";
-            default:
-                return "";
-        }
-    }
+    // public static void main(String[] args) {
+    //     try {
+    //         String resp = getResponse(prompt);
+    //         System.out.println("Got the data from Gemini , Feeding to Google Sheet");
+    //         writeDataToGoogleSheet(AppConstants.GOOGLE_SHEET_NAME, resp);
 
-    public static void main(String[] args) {
-        try {
-            String resp = getResponse(prompt);
-            System.out.println(resp + "<==== response");
-            List<String> addresses = extractMainContent(resp);
-            writeDataToGoogleSheet(AppConstants.GOOGLE_SHEET_NAME, addresses);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    //     } catch (Exception e) {
+    //         e.printStackTrace();
+    //     }
+    // }
 }

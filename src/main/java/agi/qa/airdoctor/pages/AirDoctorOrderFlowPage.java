@@ -356,16 +356,19 @@ public class AirDoctorOrderFlowPage {
 		// return url;
 	}
 
-
-	// calling GEMINI to generate data and store that data on google sheet 
-	public void AddGeminiToGoogleSheet(String prompt) throws IOException, GeneralSecurityException{
-		System.out.println("inside AddGeminiToGoogle Function with prompt : " + prompt);
+	// calling GEMINI to generate data and store that data on google sheet
+	public void AddGeminiToGoogleSheet(String prompt) throws IOException, GeneralSecurityException {
+		System.out.println("inside AddGeminiToGoogle Function with prompt : " +
+				prompt);
+		// String resp = GeminiUtil.getResponse(prompt);
+		// System.out.println("Got the data , now filling data to Google Sheet");
+		// List<String> addresses = GeminiUtil.extractMainContent(resp);
+		// GeminiUtil.writeDataToGoogleSheet(AppConstants.GOOGLE_SHEET_NAME, addresses);
 		String resp = GeminiUtil.getResponse(prompt);
-		System.out.println("Got the data , now filling data to Google Sheet");
-		List<String> addresses = GeminiUtil.extractMainContent(resp);
-		GeminiUtil.writeDataToGoogleSheet(AppConstants.GOOGLE_SHEET_NAME, addresses);
+		System.out.println("Got the data from Gemini , Feeding to Google Sheet");
+		GeminiUtil.writeDataToGoogleSheet(AppConstants.GOOGLE_SHEET_NAME, "[" + resp + "]");
+
 	}
-	
 
 	public void checkout(String email, String firstname, String lastname, String addone, String addtwo, String cty,
 			String state, String zip, String phonenumber) throws InterruptedException, Exception {
