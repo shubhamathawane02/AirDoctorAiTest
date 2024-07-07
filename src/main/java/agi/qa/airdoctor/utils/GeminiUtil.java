@@ -18,7 +18,7 @@ import agi.qa.airdoctor.constants.AppConstants;
 
 public class GeminiUtil {
 
-    public static String prompt = "give me 15 fictional addresses in which each fields  street1, street2,  city state and zip (total 5 fields) should be separated by comma  and it should contains following states : Alabama Alaska Arizona Arkansas California Colorado Connecticut Delaware District Columbia Florida Georgia Hawaii Idaho Illinois Indiana Iowa Kansas Kentucky Louisiana Maine Maryland Massachusetts Michigan Minnesota Mississippi Missouri Montana Nebraska Nevada New Hampshire New Jersey New Mexico New York North Carolina North Dakota Ohio Oklahoma Oregon Pennsylvania Rhode South Carolina South Dakota Tennessee Texas Utah Vermont Virginia Washington West Virginia Wisconsin Wyoming in json format";
+    public static String prompt = "give me 27 fictional addresses in which each fields  street1, street2,  city state and zip (total 5 fields) should be separated by comma  and it should contains following states : Alabama Alaska Arizona Arkansas California Colorado Connecticut Delaware District Columbia Florida Georgia Hawaii Idaho Illinois Indiana Iowa Kansas Kentucky Louisiana Maine Maryland Massachusetts Michigan Minnesota Mississippi Missouri Montana Nebraska Nevada New Hampshire New Jersey New Mexico New York North Carolina North Dakota Ohio Oklahoma Oregon Pennsylvania Rhode South Carolina South Dakota Tennessee Texas Utah Vermont Virginia Washington West Virginia Wisconsin Wyoming in json format";
 
     public static String getResponse(String prompt) {
         String jsonString = "{\"contents\":[" +
@@ -49,7 +49,7 @@ public class GeminiUtil {
                 String resp = response.toString();
                 System.out.println("Returning gemini response...");
                 String jsonResponse = resp.replace("```json", "").replace("```", "").trim();
-                return "[" + jsonResponse + "]";
+                return jsonResponse;
             } else {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getErrorStream(), "utf-8"));
                 StringBuilder response = new StringBuilder();
@@ -71,6 +71,7 @@ public class GeminiUtil {
     public static void writeDataToGoogleSheet(String sheetName, String jsonResponse)
             throws IOException, GeneralSecurityException {
         Sheets service = SheetUtil.getSheetsService(); // Ensure you have this utility method
+        System.out.println("JSON RESPONSE " + jsonResponse);
 
         JSONArray responseArray = new JSONArray(jsonResponse);
 
@@ -183,13 +184,13 @@ public class GeminiUtil {
     }
 
     // public static void main(String[] args) {
-    //     try {
-    //         String resp = getResponse(prompt);
-    //         System.out.println("Got the data from Gemini , Feeding to Google Sheet");
-    //         writeDataToGoogleSheet(AppConstants.GOOGLE_SHEET_NAME, resp);
+    // try {
+    // String resp = getResponse(prompt);
+    // System.out.println("Got the data from Gemini , Feeding to Google Sheet");
+    // writeDataToGoogleSheet(AppConstants.GOOGLE_SHEET_NAME, resp);
 
-    //     } catch (Exception e) {
-    //         e.printStackTrace();
-    //     }
+    // } catch (Exception e) {
+    // e.printStackTrace();
+    // }
     // }
 }
